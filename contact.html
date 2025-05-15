@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Healthcare Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* NEW STYLES SPECIFIC TO CONTACT PAGE */
+        
+        .contact-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('images/contact-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-card {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: none;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(3, 74, 177, 0.15);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(3, 74, 177, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control, .form-select {
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            height: auto;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(3, 74, 177, 0.15);
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border: none;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .contact-hero {
+                padding: 80px 0;
+            }
+            
+            .contact-info {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Same as other pages) -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.jpg" alt="Healthcare Solutions" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="medical-billing.html">Medical Billing</a></li>
+                            <li><a class="dropdown-item" href="medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a class="dropdown-item" href="medical-coding.html">Medical Coding</a></li>
+                            <li><a class="dropdown-item" href="patient-eligibility-verification.html">Patient Eligibility Verification</a></li>
+                            <li><a class="dropdown-item" href="denial-management.html">Denial Management</a></li>
+                            <li><a class="dropdown-item" href="account-receivable-services.html">Account Receivable Services</a></li>
+                            <li><a class="dropdown-item" href="virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                            <li><a class="dropdown-item" href="healthcare-digital-marketing.html">Healthcare Digital Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch With Us</h1>
+            <p class="lead">We're here to help with all your medical billing and revenue cycle needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Contact Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card p-4 text-center">
+                        <div class="contact-icon mx-auto">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>123 Medical Center Drive<br>Suite 456<br>Healthcare City, HC 78901</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card p-4 text-center">
+                        <div class="contact-icon mx-auto">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone Numbers</h3>
+                        <p>
+                            <a href="tel:+18001234567" class="text-dark">(800) 123-4567</a><br>
+                            <a href="tel:+18009876543" class="text-dark">(800) 987-6543</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contact Card 3 -->
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="contact-card p-4 text-center">
+                        <div class="contact-icon mx-auto">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>
+                            <a href="mailto:info@healthcaresolutions.com" class="text-dark">info@healthcaresolutions.com</a><br>
+                            <a href="mailto:support@healthcaresolutions.com" class="text-dark">support@healthcaresolutions.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2 class="mb-4">Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="service" required>
+                                            <option value="" selected disabled>Select a Service</option>
+                                            <option value="Medical Billing">Medical Billing</option>
+                                            <option value="Medical Credentialing">Medical Credentialing</option>
+                                            <option value="Medical Coding">Medical Coding</option>
+                                            <option value="Patient Eligibility">Patient Eligibility Verification</option>
+                                            <option value="Denial Management">Denial Management</option>
+                                            <option value="AR Services">Account Receivable Services</option>
+                                            <option value="Virtual Staff">Virtual Medical Staff</option>
+                                            <option value="Marketing">Healthcare Digital Marketing</option>
+                                        </select>
+                                        <label for="service">Service Interested In</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Your Message" id="message" style="height: 150px" required></textarea>
+                                        <label for="message">Your Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn submit-btn">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="col-lg-6">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209179042!2d-73.98784492452554!3d40.74844047138965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1686756382924!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Our Business Hours</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Monday - Friday</th>
+                                    <td>8:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <th>Saturday</th>
+                                    <td>9:00 AM - 2:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <th>Sunday</th>
+                                    <td>Closed</td>
+                                </tr>
+                                <tr>
+                                    <th>Emergency Support</th>
+                                    <td>24/7 Available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4">For after-hours emergencies, please call our 24/7 support line at <a href="tel:+18001234567">(800) 123-4567</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="#">
+                            <img src="./img/logo-2.jpg" alt="Company Logo" width="150" height="50"></a>
+
+                        <p>We provide innovative digital solutions to help businesses grow and succeed in the modern
+                            world.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact-Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Medical Billing</a></li>
+                            <li><a href="#">Medical Credentialing</a></li>
+                            <li><a href="#">Medical Coding</a></li>
+                            <li><a href="#">Patient Eligibility Verification</a></li>
+                            <li><a href="#">Denial Management</a></li>
+                            <li><a href="#">Account Receivable Services</a></li>
+                            <li><a href="#">Virtual Medical Staff</a></li>
+                            <li><a href="#">Healthcare Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i>Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@Spearhead.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Contact Form Validation -->
+    <script>
+        (function() {
+            'use strict';
+            
+            // Fetch the form element
+            const form = document.getElementById('contactForm');
+            
+            // Add submit event listener
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    // Form is valid - you would typically send data to server here
+                    alert('Thank you for your message! We will contact you soon.');
+                    form.reset();
+                }
+                
+                form.classList.add('was-validated');
+            }, false);
+        })();
+    </script>
+</body>
+</html>
