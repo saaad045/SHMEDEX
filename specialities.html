@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Your Company</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Custom styles */
+        .specialities-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        /* Card Flip Container */
+        .flip-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        /* Flip animation */
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and back styling */
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background-color: #fff;
+            color: #034ab1;
+        }
+
+        .card-back {
+            background-color: #034ab1;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .speciality-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="150" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split ps-0" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+
+                         <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Patient-elig-verify.html">Patient Eligibility
+                                        Verification</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Account Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    <a class="dropdown-item" href="Healthcare-digital-mark.html">Healthcare Digital
+                                        Marketing</a>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="£">Website development</a>
+                                    <a class="dropdown-item" href="£">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="£">Search Engine <br class="d-none d-lg-block">
+                                        Optimization</a>
+                                    <a class="dropdown-item" href="£">Social Media <br class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="£">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact-Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="#contact"
+                            style="background-color: #034AB1; border: none;">
+                            Free Consultation
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Specialities Hero Section -->
+    <section class="specialities-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Our Specialities</h1>
+            <p class="lead">We excel in these key areas that set us apart from the competition.<br>
+                Hover over each card to discover what makes our approach unique.</p>
+        </div>
+    </section>
+
+    <!-- Specialities Grid Section -->
+    <section class="container my-5 py-5">
+        <div class="row">
+            <!-- Speciality 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Mental Health</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>We don't just follow trends - we create them. Our team develops custom solutions tailored
+                                to your specific business challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3>Internal Medicine</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Your success is our priority. We work closely with you at every stage to ensure the final
+                                product exceeds expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h3>Pediatrics</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>We deliver quality results faster than industry standards without compromising on
+                                excellence or attention to detail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <h3>Emergency Medicine</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Outsource your emergency room billing services today for growth and efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 5 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <h3>OB Gyn</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing solutions for obstetric and gynecological practices to maximize
+                                revenue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 6 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <h3>Chiropractic</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Expert billing services tailored specifically for chiropractic practices and their unique
+                                needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 7 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h3>Hematology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing solutions for hematology practices to streamline operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 8 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Cardiology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing services for cardiology practices to ensure maximum reimbursement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Speciality 9 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-lungs"></i>
+                            </div>
+                            <h3>Pulmonology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for pulmonary function tests and respiratory treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 10 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-x-ray"></i>
+                            </div>
+                            <h3>Radiology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Expert handling of radiology billing including MRI, CT scans, and X-rays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 11 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-procedures"></i>
+                            </div>
+                            <h3>Urology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for urological procedures and treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 12 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-wheelchair"></i>
+                            </div>
+                            <h3>Rehab Medicine</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing for physical medicine and rehabilitation services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 13 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-band-aid"></i>
+                            </div>
+                            <h3>Wound Care</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for wound care management and hyperbaric treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 14 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3>Pediatric</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized pediatric billing for all child healthcare services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 15 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Urgent Care</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing solutions for urgent care facilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 16 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h3>Podiatry</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for foot and ankle treatments and surgeries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 17 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <h3>Anesthesia</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Expert anesthesia billing with proper time units and modifiers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 18 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3>Oncology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for chemotherapy and cancer treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 19 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Ophthalmology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing for eye care and vision services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 20 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <h3>Pain Management</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for pain management procedures and injections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 21 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3>Pathology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Expert pathology billing for laboratory and diagnostic services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 22 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3>General Surgery</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing for surgical procedures across specialties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 23 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-allergies"></i>
+                            </div>
+                            <h3>Dermatology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for dermatological procedures and skin treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 24 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3>Endocrinology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for diabetes and hormone disorder treatments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 25 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h3>Physical Therapy</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing for PT, OT, and rehabilitation services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 26 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <h3>Gastroenterology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for GI procedures including colonoscopies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 27 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Geriatrics</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for elderly patient care and chronic conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 28 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-virus"></i>
+                            </div>
+                            <h3>Infectious Disease</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for infectious disease treatments and vaccinations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 29 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Hepatology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for liver disease treatments and procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 30 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <h3>Allergy & Immunology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for allergy testing and immunotherapy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 31 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-clinic-medical"></i>
+                            </div>
+                            <h3>Medical Clinics</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing solutions for multi-specialty clinics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 32 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>Family Practice</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Complete billing solutions for family medicine practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 33 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h3>Nephrology</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for kidney disease treatments and dialysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 34 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Neurosurgery</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Specialized billing for complex neurological procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality 35 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-procedures"></i>
+                            </div>
+                            <h3>Nursing Home</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Comprehensive billing for skilled nursing facilities and LTC.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Streamline Your Credentialing?</h2>
+            <p>Get your providers enrolled faster and start seeing patients sooner.</p>
+            <a href="contact.html" class="btn cta-btn">Start Credentialing Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="#">
+                            <img src="./img/logo-2.png" alt="Company Logo" width="150" height="50"></a>
+
+                        <p>We provide innovative digital solutions to help businesses grow and succeed in the modern
+                            world.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact-Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Patient-elig-verify.html">Patient Eligibility Verification</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Account Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                            <li><a href="Healthcare-digital-mark.html">Healthcare Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i>Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="./js/script.js">
+    </script>
+</body>
+
+</html>

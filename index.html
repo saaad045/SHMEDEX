@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spearhead</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="150" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split ps-0" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+
+                        <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Patient-elig-verify.html">Patient Eligibility
+                                        Verification</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Account Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    <a class="dropdown-item" href="Healthcare-digital-mark.html">Healthcare Digital
+                                        Marketing</a>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="£">Website development</a>
+                                    <a class="dropdown-item" href="£">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="£">Search Engine <br class="d-none d-lg-block">
+                                        Optimization</a>
+                                    <a class="dropdown-item" href="£">Social Media <br class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="£">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact-Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html"
+                            style="background-color: #034AB1; border: none;">
+                            Free Consultation
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+            alt="Hero Image" class="hero-img">
+        <div class="hero-content">
+            <h1 class="hero-title">Spearhead Medical Billing Expetise</h1>
+            <p class="hero-subtitle">We help businesses grow with our cutting-edge technology and creative strategies
+            </p>
+            <a href="#stats" class="btn btn-hero" id="scrollBtn">Get Started</a>
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="projectCount">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="clientCount">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="teamCount">0</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Specialities Section -->
+    <section class="specialities py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specialities</h2>
+                <p class="text-center mx-auto" style="max-width: 700px;">
+                    We excel in these key areas that set us apart from the competition.
+                    Hover over each card to discover what makes our approach unique.
+                </p>
+            </div>
+
+            <div class="row mt-5">
+                <!-- Speciality 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="speciality-card">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Mental Health</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>We don't just follow trends - we create them. Our team develops custom solutions tailored
+                                to your specific business challenges.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speciality 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="speciality-card">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Internal Medicine</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Your success is our priority. We work closely with you at every stage to ensure the final
+                                product exceeds expectations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speciality 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="speciality-card">
+                        <div class="card-front">
+                            <div class="speciality-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Pediatrics</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>We deliver quality results faster than industry standards without compromising on
+                                excellence or attention to detail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a class="btn btn-primary nav-btn" href="specialities.html"
+                        style="background-color: #034AB1; border: none;">
+                        View More Specialities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="service-title">Credentiality</h3>
+                            <p class="card-text">We create responsive, user-friendly websites that help your business
+                                stand out in the digital world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="service-title">Billing</h3>
+                            <p class="card-text">Custom mobile applications designed to engage your customers and
+                                streamline your operations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-title">Virtual / Front Desk</h3>
+                            <p class="card-text">Comprehensive digital marketing strategies to increase your online
+                                visibility and grow your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- View More Button -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a class="btn btn-primary nav-btn" href="services.html"
+                        style="background-color: #034AB1; border: none;">
+                        View More Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Our Team" class="about-img">
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2>Who we Are</h2>
+                        <p>We are a team of passionate professionals dedicated to delivering exceptional digital
+                            solutions that drive business growth and success.</p>
+                        <p>Founded in 2010, we have grown from a small startup to a trusted partner for businesses
+                            across various industries. Our mission is to help our clients navigate the digital landscape
+                            with innovative solutions tailored to their unique needs.</p>
+                        <ul class="about-list">
+                            <li><i class="fas fa-check"></i> Over 10 years of industry experience</li>
+                            <li><i class="fas fa-check"></i> Certified professionals in various technologies</li>
+                            <li><i class="fas fa-check"></i> Client-focused approach</li>
+                            <li><i class="fas fa-check"></i> Continuous learning and innovation</li>
+                        </ul>
+
+                        <a class="btn btn-primary nav-btn" href="about.html"
+                            style="background-color: #034AB1; border: none;">
+                            Learn More
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light position-relative">
+        <div class="container position-relative">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p class="text-center mx-auto" style="max-width: 700px;">
+                    Don't just take our word for it. Here's what our valued clients have to say about working with us.
+                </p>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="testimonial-carousel mt-5">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item active">
+                            <div class="testimonial-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="testimonial-img">
+                                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client"
+                                                class="img-fluid">
+                                            <div class="quote-icon">
+                                                <i class="fas fa-quote-left"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="testimonial-content">
+                                            <div class="rating mb-3">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <p class="testimonial-text">"Working with this team transformed our digital
+                                                presence. Their attention to detail and creative approach resulted in a
+                                                40% increase in our online conversions within just three months."</p>
+                                            <div class="client-info">
+                                                <h4>Sarah Johnson</h4>
+                                                <p>Marketing Director, TechCorp</p>
+                                            </div>
+                                            <div class="company-logo">
+                                                <img src="https://via.placeholder.com/100x30?text=TechCorp"
+                                                    alt="Company Logo" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="testimonial-img">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"
+                                                class="img-fluid">
+                                            <div class="quote-icon">
+                                                <i class="fas fa-quote-left"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="testimonial-content">
+                                            <div class="rating mb-3">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <p class="testimonial-text">"The mobile app they developed for us exceeded
+                                                all expectations. Their technical expertise and project management
+                                                skills made the entire process smooth and efficient. We've already seen
+                                                a 25% increase in customer engagement."</p>
+                                            <div class="client-info">
+                                                <h4>Michael Chen</h4>
+                                                <p>CEO, RetailSolutions</p>
+                                            </div>
+                                            <div class="company-logo">
+                                                <img src="https://via.placeholder.com/100x30?text=RetailSol"
+                                                    alt="Company Logo" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-item">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="testimonial-img">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client"
+                                                class="img-fluid">
+                                            <div class="quote-icon">
+                                                <i class="fas fa-quote-left"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="testimonial-content">
+                                            <div class="rating mb-3">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <p class="testimonial-text">"Their digital marketing strategy revolutionized
+                                                our lead generation. The team's data-driven approach and creative
+                                                campaigns delivered a 300% ROI in the first quarter. Truly a
+                                                game-changer for our business."</p>
+                                            <div class="client-info">
+                                                <h4>Emily Rodriguez</h4>
+                                                <p>VP of Sales, Finova</p>
+                                            </div>
+                                            <div class="company-logo">
+                                                <img src="https://via.placeholder.com/100x30?text=Finova"
+                                                    alt="Company Logo" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges mt-5 text-center">
+                <p class="text-muted mb-3">TRUSTED BY COMPANIES WORLDWIDE</p>
+                <div class="d-flex flex-wrap justify-content-center align-items-center">
+                    <img src="https://via.placeholder.com/120x40?text=Company1" alt="Trust Badge"
+                        class="img-fluid mx-3 my-2">
+                    <img src="https://via.placeholder.com/120x40?text=Company2" alt="Trust Badge"
+                        class="img-fluid mx-3 my-2">
+                    <img src="https://via.placeholder.com/120x40?text=Company3" alt="Trust Badge"
+                        class="img-fluid mx-3 my-2">
+                    <img src="https://via.placeholder.com/120x40?text=Company4" alt="Trust Badge"
+                        class="img-fluid mx-3 my-2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background Elements -->
+        <div class="testimonial-bg-element testimonial-bg-element-1"></div>
+        <div class="testimonial-bg-element testimonial-bg-element-2"></div>
+    </section>
+    <!-- Blog Section -->
+    <section class="blog py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest From Our Blog</h2>
+                <p class="text-center mx-auto" style="max-width: 700px;">
+                    Discover industry insights, tips, and company updates in our regularly updated blog
+                </p>
+            </div>
+
+            <div class="row mt-4">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Blog Post" class="img-fluid">
+                            <div class="blog-date">
+                                <span>15</span>
+                                <span>May</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> Admin</span>
+                                <span><i class="fas fa-comments"></i> 5 Comments</span>
+                            </div>
+                            <h3><a href="#">How to Improve Credentiality</a></h3>
+                            <p>Lorem Espum</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Blog Post" class="img-fluid">
+                            <div class="blog-date">
+                                <span>08</span>
+                                <span>May</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> Admin</span>
+                                <span><i class="fas fa-comments"></i> 12 Comments</span>
+                            </div>
+                            <h3><a href="#">The Future of Front desk</a></h3>
+                            <p>Lorem Espum</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                                alt="Blog Post" class="img-fluid">
+                            <div class="blog-date">
+                                <span>01</span>
+                                <span>May</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> Admin</span>
+                                <span><i class="fas fa-comments"></i> 8 Comments</span>
+                            </div>
+                            <h3><a href="#">Billing Trends You Can't Ignore in 2023</a></h3>
+                            <p>Lorem Espum</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a class="btn btn-primary nav-btn" href="blog.html" style="background-color: #034AB1; border: none;">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+
+    <section class="contact py-5">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p class="text-center mx-auto" style="max-width: 700px;">
+                    Have questions or want to discuss a project? Reach out to us - we'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="row mt-5 g-4">
+                <!-- Map Column -->
+                <div class="col-lg-6">
+                    <div class="contact-map-container h-100">
+                        <div class="map-wrapper rounded-3 overflow-hidden shadow-lg h-100">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209179042!2d-73.98784492452554!3d40.74844047138965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1686756382924!5m2!1sen!2sus"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="map-iframe">
+                            </iframe>
+                            <div class="map-overlay">
+                                <div class="location-info bg-white p-4 rounded-3 shadow-sm">
+                                    <h5 class="text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i> Our
+                                        Location</h5>
+                                    <p class="mb-2">123 Business Avenue</p>
+                                    <p class="mb-0">New York, NY 10001</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary mt-3">
+                                        <i class="fas fa-directions me-1"></i> Get Directions
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2 class="mb-4">Send Us a Message</h2>
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                            class="needs-validation" novalidate>
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="cde69bb1-5fc0-4bd7-bf08-703a4951c654">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                        <div class="invalid-feedback">Please provide your name.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Your Email" required>
+                                        <label for="email">Your Email</label>
+                                        <div class="invalid-feedback">Please provide a valid email.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+                                            placeholder="Phone Number" required>
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <div class="invalid-feedback">Enter your phone number.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="service" name="service" required>
+                                            <option value="" selected disabled>Select a Service</option>
+                                            <option value="Medical Billing">Medical Billing</option>
+                                            <option value="Medical Credentialing">Medical Credentialing</option>
+                                            <option value="Medical Coding">Medical Coding</option>
+                                            <option value="Patient Eligibility">Patient Eligibility Verification
+                                            </option>
+                                            <option value="Denial Management">Denial Management</option>
+                                            <option value="AR Services">Account Receivable Services</option>
+                                            <option value="Virtual Staff">Virtual Medical Staff</option>
+                                            <option value="Marketing">Healthcare Digital Marketing</option>
+                                        </select>
+                                        <label for="service">Service Interested In</label>
+                                        <div class="invalid-feedback">Please select a service.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Your Message" id="message"
+                                            name="message" style="height: 150px" required></textarea>
+                                        <label for="message">Your Message</label>
+                                        <div class="invalid-feedback">Please provide your message.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn submit-btn">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info 
+            <div class="container mt-5 pt-3">
+                <div class="row gy-4">
+                    <!-- Phone 
+                    <div class="col-md-6 d-flex align-items-start">
+                        <div class="d-flex align-items-center w-100">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Call Us</h6>
+                                <p class="mb-0 text-nowrap">+92 234 567 890</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email 
+                    <div class="col-md-6 d-flex align-items-start">
+                        <div class="d-flex align-items-center w-100">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Email Us</h6>
+                                <p class="mb-0 text-nowrap">info@Spearhead.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hours 
+                    <div class="col-md-6 d-flex align-items-start">
+                        <div class="d-flex align-items-center w-100">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Hours</h6>
+                                <p class="mb-0 text-nowrap">Mon–Fri: 9AM–6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Info -->
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="#">
+                            <img src="./img/logo-2.png" alt="Company Logo" width="150" height="50"></a>
+
+                        <p>We provide innovative digital solutions to help businesses grow and succeed in the modern
+                            world.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact-Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Patient-elig-verify.html">Patient Eligibility Verification</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Account Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                            <li><a href="Healthcare-digital-mark.html">Healthcare Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i>Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="./js/script.js">
+    </script>
+</body>
+
+</html>

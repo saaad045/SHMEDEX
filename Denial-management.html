@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denial Management Services | Your Company</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- ...existing code... -->
+    <style>
+        .denial-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .impact-card {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .denial-reason {
+            border-left: 4px solid #dc3545;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .process-connector {
+            position: absolute;
+            left: 14px;
+            top: 40px;
+            bottom: -40px;
+            width: 2px;
+            background-color: #0d6efd;
+        }
+
+        .process-step:last-child .process-connector {
+            display: none;
+        }
+
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="150" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="../services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                         <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Patient-elig-verify.html">Patient Eligibility
+                                        Verification</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Account Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    <a class="dropdown-item" href="Healthcare-digital-mark.html">Healthcare Digital
+                                        Marketing</a>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="£">Website development</a>
+                                    <a class="dropdown-item" href="£">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="£">Search Engine <br class="d-none d-lg-block">
+                                        Optimization</a>
+                                    <a class="dropdown-item" href="£">Social Media <br class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="£">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact-Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="../contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="denial-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Denial Management Services</h1>
+            <p class="lead">Recover lost revenue and prevent future claim denials with our proven denial resolution
+                system</p>
+            <a href="contact.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                Recover Your Revenue Now<i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Problem/Solution Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">The High Cost of Unresolved Claim Denials</h2>
+                    <p>Most healthcare providers lose <strong>5-10%</strong> of their potential revenue to claim
+                        denials, and shockingly, <strong>65%</strong> of these denials are never resubmitted. Our data
+                        shows the average practice loses <strong>$100,000+ annually</strong> from preventable denials.
+                    </p>
+
+                    <div class="alert alert-danger mt-4">
+                        <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i> Common Denial Reasons
+                        </h4>
+                        <div class="denial-reason">
+                            <h5>1. Eligibility Issues (27%)</h5>
+                            <p>Coverage terminated, patient not found, or inactive policy</p>
+                        </div>
+                        <div class="denial-reason">
+                            <h5>2. Authorization Problems (23%)</h5>
+                            <p>Missing pre-authorization or referral requirements</p>
+                        </div>
+                        <div class="denial-reason">
+                            <h5>3. Coding Errors (19%)</h5>
+                            <p>Incorrect ICD-10, CPT, or modifier usage</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 bg-light rounded shadow-sm">
+                        <h3 class="text-center mb-4">Our Denial Resolution Solution</h3>
+                        <p>We implement a comprehensive 3-phase approach to not only recover your denied claims but
+                            prevent future denials:</p>
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-search-dollar fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>1. Denial Analysis & Recovery</h5>
+                                <p>Our experts identify root causes and recover 85-90% of denied claims</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-shield-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>2. Process Improvement</h5>
+                                <p>We implement corrective actions to prevent repeat denials</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>3. Continuous Monitoring</h5>
+                                <p>Ongoing tracking ensures sustained denial rate reduction</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <div class="stat-highlight">90%</div>
+                            <p class="lead">Average recovery rate for first-time denials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Proven Impact on Revenue Cycle Performance</h2>
+                <p class="lead">Typical results our clients achieve within 90 days</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="impact-card p-4 bg-white shadow-sm text-center">
+                        <div class="icon-box bg-success text-white mb-3 mx-auto">
+                            <i class="fas fa-percentage fa-2x"></i>
+                        </div>
+                        <h3>40-60%</h3>
+                        <p>Reduction in overall denial rates</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="impact-card p-4 bg-white shadow-sm text-center">
+                        <div class="icon-box bg-success text-white mb-3 mx-auto">
+                            <i class="fas fa-dollar-sign fa-2x"></i>
+                        </div>
+                        <h3>85-90%</h3>
+                        <p>Recovery rate on first-time denials</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="impact-card p-4 bg-white shadow-sm text-center">
+                        <div class="icon-box bg-success text-white mb-3 mx-auto">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </div>
+                        <h3>50% Faster</h3>
+                        <p>Resolution time compared to in-house teams</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="impact-card p-4 bg-white shadow-sm">
+                        <div class="d-flex">
+                            <div class="icon-box bg-success text-white me-3">
+                                <i class="fas fa-chart-pie fa-2x"></i>
+                            </div>
+                            <div>
+                                <h3>Denial Trend Analysis</h3>
+                                <p>Our proprietary analytics identify patterns in your denials by payer, service type,
+                                    and reason code to target improvement areas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="impact-card p-4 bg-white shadow-sm">
+                        <div class="d-flex">
+                            <div class="icon-box bg-success text-white me-3">
+                                <i class="fas fa-user-md fa-2x"></i>
+                            </div>
+                            <div>
+                                <h3>Staff Productivity</h3>
+                                <p>Free your staff from denial paperwork - our average client redeploys 120+ hours/month
+                                    to patient care</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Denial Resolution Process</h2>
+                <p class="text-center mx-auto">A systematic approach to maximize recoveries</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Denial Identification & Categorization</h3>
+                            <p>We aggregate denials from all sources (ERAs, payer portals, paper EOBs) and categorize by
+                                root cause using our proprietary taxonomy.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Appeal Preparation</h3>
+                            <p>Our certified specialists gather supporting documentation, craft persuasive appeal
+                                letters, and ensure compliance with each payer's requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Payer Follow-up</h3>
+                            <p>We track each appeal through resolution, conducting regular follow-ups with payer
+                                representatives to expedite processing.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Recovery Posting</h3>
+                            <p>All recovered payments are accurately posted to your system with detailed documentation
+                                for reconciliation.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>Prevention Strategy</h3>
+                            <p>Monthly reports highlight denial trends and recommend process improvements to prevent
+                                future occurrences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="./img/denial-mgmt-1.webp" alt="Denial Management Dashboard"
+                        class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Advanced Denial Management Technology</h2>
+                    <p>Our proprietary denial management platform gives you real-time visibility into your denial
+                        performance:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Denial Tracking
+                                Dashboard:</strong> Monitor denial rates, recovery percentages, and financial impact
+                        </li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Payer Performance
+                                Analytics:</strong> Identify problematic payers and service lines</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Automated
+                                Workflows:</strong> Route denials to appropriate specialists based on denial reason</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Appeal
+                                Templates:</strong> Pre-approved, compliant appeal letters for common denial reasons
+                        </li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> <strong>Integration
+                                Capabilities:</strong> Works with all major practice management and billing systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Work With Us?</h2>
+            <p>Whether you're looking to start a new project or just want to learn more about our services, we'd love to
+                hear from you.</p>
+            <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Denial Management FAQs</h2>
+                <p class="text-center mx-auto">Answers to common questions about our services</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    How quickly can you start handling our billing?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We typically complete onboarding and transition within 2-3 weeks. This includes EHR
+                                    integration, staff training, and historical account migration. For urgent needs, we
+                                    offer expedited onboarding in as little as 5 business days.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    Do you work with our existing EHR system?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we integrate with all major EHR/EMR systems including Epic, Cerner, NextGen,
+                                    eClinicalWorks, and more. Our team will handle the entire integration process at no
+                                    additional cost.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    How do you handle patient billing and collections?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide compassionate yet effective patient billing services including statement
+                                    generation, payment plans, and collections follow-up. All communications maintain
+                                    your practice's branding and values. Our approach maintains patient satisfaction
+                                    while improving collections by 25-40%.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    What's included in your performance reports?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our comprehensive reports include: Days in A/R, collection rates by payer, denial
+                                    rates and reasons, top denial codes, clean claim percentage, aging reports, and
+                                    comparative performance metrics. We also provide actionable recommendations to
+                                    further optimize revenue.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="#">
+                            <img src="../img/logo-2.png" alt="Company Logo" width="150" height="50"></a>
+                        <p>We provide innovative digital solutions to help businesses grow and succeed in the modern
+                            world.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact-Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Patient-elig-verify.html">Patient Eligibility Verification</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Account Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                            <li><a href="Healthcare-digital-mark.html">Healthcare Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i>Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@Spearhead.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
