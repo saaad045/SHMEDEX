@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Healthcare Solutions</title>
+    <title>Contact Us | SHMEDEX</title>
+        <link rel="icon" href="./img/favicon1.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Your existing CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <style>
         /* NEW STYLES SPECIFIC TO CONTACT PAGE */
@@ -264,76 +263,80 @@
             <div class="row g-4">
                 <!-- Contact Form -->
                 <div class="col-lg-6">
-                    <div class="contact-form">
-                        <h2 class="mb-4">Send Us a Message</h2>
-                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
-                            class="needs-validation" novalidate>
-                            <!-- Web3Forms Access Key -->
-                            <input type="hidden" name="access_key" value="cde69bb1-5fc0-4bd7-bf08-703a4951c654">
+    <div class="contact-form">
+        <h2 class="mb-4">Send Us a Message</h2>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="needs-validation" novalidate>
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="cde69bb1-5fc0-4bd7-bf08-703a4951c654">
 
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                        <div class="invalid-feedback">Please provide your name.</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                        <div class="invalid-feedback">Please provide a valid email.</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
-                                            placeholder="phoneNumber" required>
-                                        <label for="phoneNumber">Phone Number</label>
-                                        <div class="invalid-feedback">Enter your Phone Number.</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="service" name="service" required>
-                                            <option value="" selected disabled>Select a Service</option>
-                                            <option value="Medical Billing">Medical Billing</option>
-                                            <option value="Medical Credentialing">Medical Credentialing</option>
-                                            <option value="Medical Coding">Medical Coding</option>
-                                            <option value="Patient Eligibility">Patient Eligibility Verification
-                                            </option>
-                                            <option value="Denial Management">Denial Management</option>
-                                            <option value="AR Services">Account Receivable Services</option>
-                                            <option value="Virtual Staff">Virtual Medical Staff</option>
-                                            <option value="Marketing">Healthcare Digital Marketing</option>
-                                        </select>
-                                        <label for="service">Service Interested In</label>
-                                        <div class="invalid-feedback">Please select a service.</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Your Message" id="message"
-                                            name="message" style="height: 150px" required></textarea>
-                                        <label for="message">Your Message</label>
-                                        <div class="invalid-feedback">Please provide your message.</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn submit-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                        <div class="invalid-feedback">Please provide your name.</div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                        <div class="invalid-feedback">Please provide a valid email.</div>
+                    </div>
+                </div>
+
+                <!-- New Company Name Field -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="company" name="company" placeholder="Company Name" required>
+                        <label for="company">Company Name</label>
+                        <div class="invalid-feedback">Please provide your company name.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+                        <label for="phoneNumber">Phone Number</label>
+                        <div class="invalid-feedback">Enter your phone number.</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating">
+                        <select class="form-select" id="service" name="service" required>
+                            <option value="" selected disabled>Select a Service</option>
+                            <option value="Medical Billing">Medical Billing</option>
+                            <option value="Medical Credentialing">Medical Credentialing</option>
+                            <option value="Medical Coding">Medical Coding</option>
+                            <option value="Patient Eligibility">Patient Eligibility Verification</option>
+                            <option value="Denial Management">Denial Management</option>
+                            <option value="AR Services">Account Receivable Services</option>
+                            <option value="Virtual Staff">Virtual Medical Staff</option>
+                            <option value="Marketing">Healthcare Digital Marketing</option>
+                        </select>
+                        <label for="service">Service Interested In</label>
+                        <div class="invalid-feedback">Please select a service.</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Your Message" id="message" name="message" style="height: 150px" required></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="invalid-feedback">Please provide your message.</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 
 
                 <!-- Map -->
@@ -445,6 +448,20 @@
     </footer>
 
     <!-- Bootstrap JS -->
+     <script>
+    // Bootstrap + Custom form validation
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault(); // block the submission
+                event.stopPropagation();
+                form.classList.add("was-validated");
+            }
+        }, false);
+    });
+</script>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
