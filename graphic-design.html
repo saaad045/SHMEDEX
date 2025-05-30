@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta name="description" content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .service-hero {
+           background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .btn-hero {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.7s;
+            opacity: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-hero:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+            background: white;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /*.pricing-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-body {
+            padding: 30px;
+            background: white;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        } */
+
+        .design-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 50px;
+            padding: 8px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .design-badge i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+       /* .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.2);
+        }
+
+        .portfolio-item img {
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        } */
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .service-hero {
+                padding: 100px 0 60px;
+            }
+
+            .process-step {
+                padding-left: 70px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-hero {
+                padding: 80px 0 40px;
+            }
+
+            .process-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+             <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                        <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="web-dev.html">Website development</a>
+                                    <a class="dropdown-item" href="ui-ux.html">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="seo.html">Search Engine <br
+                                            class="d-none d-lg-block">Optimization</a>
+                                            <a class="dropdown-item" href="graphic-design.html">Graphic Designing <br
+                                            class="d-none d-lg-block"></a>
+                                    <a class="dropdown-item" href="social-med.html">Social Media <br
+                                            class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-writing.html">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Professional Graphic Design Services</h1>
+            <p class="lead">Transform your brand with stunning visuals that captivate and communicate</p>
+            <a href="contact.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                Get Your Design Project Started <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/19406042114" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"></a>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Service Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Visual Storytelling That Makes an Impact</h2>
+                    <p>Our graphic design services help businesses communicate their message effectively through compelling visuals that resonate with their target audience. We combine creativity with strategy to deliver designs that not only look great but also drive results.</p>
+                    <p>From brand identity to marketing collateral, we create cohesive visual systems that strengthen your brand presence across all touchpoints.</p>
+                    <ul class="feature-list mt-4">
+                        <li>Custom design solutions tailored to your brand</li>
+                        <li>Strategic approach to visual communication</li>
+                        <li>Industry-leading design software and techniques</li>
+                        <li>Multiple revisions until you're completely satisfied</li>
+                        <li>Fast turnaround times without compromising quality</li>
+                        <li>All file formats delivered for versatile use</li>
+                    </ul>
+                    
+                    <div class="mt-4">
+                        <h5 class="mb-3">Design Services We Offer:</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="design-badge"><i class="fas fa-palette"></i> Logo Design</span>
+                            <span class="design-badge"><i class="fas fa-book"></i> Brand Identity</span>
+                            <span class="design-badge"><i class="fas fa-file-alt"></i> Print Design</span>
+                            <span class="design-badge"><i class="fas fa-ad"></i> Marketing Materials</span>
+                            <span class="design-badge"><i class="fas fa-t-shirt"></i> Apparel Design</span>
+                            <span class="design-badge"><i class="fas fa-box-open"></i> Packaging Design</span>
+                            <span class="design-badge"><i class="fas fa-icons"></i> Infographics</span>
+                            <span class="design-badge"><i class="fas fa-mobile-alt"></i> Social Media Graphics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Graphic Design Services" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase 
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Design Portfolio</h2>
+                <p class="text-center mx-auto">A glimpse of our recent design projects</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Brand Identity Design" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1583947581924-a31a6b5d8a0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Packaging Design" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Marketing Materials" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="contact.html" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Benefits Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Professional Design Matters</h2>
+                <p class="text-center mx-auto">Great design creates lasting impressions and drives business results</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Brand Recognition</h3>
+                        <p>Consistent, professional design makes your brand instantly recognizable and memorable.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Increased Credibility</h3>
+                        <p>Quality design builds trust and positions your business as professional and reliable.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Effective Communication</h3>
+                        <p>Visual elements communicate complex messages quickly and effectively.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Higher Conversions</h3>
+                        <p>Strategic design guides customers through the buyer's journey more effectively.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Competitive Advantage</h3>
+                        <p>Stand out in crowded markets with distinctive, professional visuals.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Emotional Connection</h3>
+                        <p>Great design creates emotional responses that build brand loyalty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Design Process</h2>
+                <p class="text-center mx-auto">A structured approach to delivering exceptional results</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Discovery & Research</h3>
+                            <p>We start by understanding your business, target audience, and design objectives through detailed discussions and market research.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Concept Development</h3>
+                            <p>Our designers create initial concepts and mood boards to establish the visual direction for your project.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Design Creation</h3>
+                            <p>We develop complete design solutions based on the approved concept, using industry-standard tools and techniques.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Client Review</h3>
+                            <p>You review the designs and provide feedback for any refinements or adjustments needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>Revisions & Refinement</h3>
+                            <p>We incorporate your feedback and polish the designs to perfection.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>Final Delivery</h3>
+                            <p>You receive all final design files in the required formats, ready for implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section 
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transparent Pricing</h2>
+                <p class="text-center mx-auto">Flexible design solutions for every budget</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Basic Plan 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basic Design</h3>
+                            <p>For Startups & Small Projects</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$299<span>/project</span></div>
+                            <p>Simple design needs</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>1-2 Design Concepts</li>
+                                <li>2 Revision Rounds</li>
+                                <li>Standard File Formats</li>
+                                <li>72 Hour Turnaround</li>
+                                <li>Email Support</li>
+                                <li>Single Designer</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Plan 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Professional</h3>
+                            <p>For Growing Businesses</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$599<span>/project</span></div>
+                            <p>Comprehensive design solutions</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>3-5 Design Concepts</li>
+                                <li>Unlimited Revisions</li>
+                                <li>All File Formats</li>
+                                <li>48 Hour Turnaround</li>
+                                <li>Priority Support</li>
+                                <li>Design Team</li>
+                                <li>Brand Guidelines</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <p>For Large-Scale Needs</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$1,299<span>/mo</span></div>
+                            <p>Ongoing design support</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Unlimited Design Requests</li>
+                                <li>Unlimited Revisions</li>
+                                <li>All File Formats</li>
+                                <li>24 Hour Turnaround</li>
+                                <li>Dedicated Designer</li>
+                                <li>Strategic Consultation</li>
+                                <li>Brand Management</li>
+                                <li>Monthly Analytics</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Elevate Your Visual Branding?</h2>
+            <p>Let's create designs that make your business stand out and connect with your audience.</p>
+            <a href="contact.html" class="btn cta-btn">Start Your Design Project</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Graphic Design FAQs</h2>
+                <p class="text-center mx-auto">Answers to common questions about our services</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    How long does a typical design project take?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Project timelines vary based on complexity. Simple projects like business cards or social media graphics can be completed in 2-3 days. More complex projects like full brand identities or packaging designs typically take 1-2 weeks. Our enterprise clients with ongoing design needs benefit from our 24-hour turnaround for most requests.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    What file formats will I receive?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We deliver all standard file formats based on your project needs. For print, we provide high-resolution PDF, EPS, and sometimes TIFF files. For digital use, we provide PNG, JPG, and often SVG files. All our professional and enterprise packages include source files (AI, PSD) so you have full flexibility for future edits.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Do you offer printing services as well?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    While we focus on design, we have established relationships with high-quality printers and can coordinate printing for you if needed. We ensure your designs are print-ready with proper bleeds, color profiles, and specifications. For clients who prefer to handle printing themselves, we provide all the necessary guidelines to ensure your materials print perfectly.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    Can you work with our existing brand guidelines?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We're happy to work within your existing brand guidelines to maintain consistency across all your materials. If you don't have established guidelines, we can help create them as part of our professional or enterprise packages. Consistent application of your brand elements is key to building recognition and trust with your audience.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="index.html">
+                            <img src="./img/logo-4.png" alt="Company Logo" width="230" height="100">
+                        </a>
+                        <p>Streamlining Healthcare Billing so you can focus on what matters most, patient care.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576403553969"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/SHMEDEX"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shmedex/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/105496552"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Medical Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Verification-of-benefits.html">Verification of Benefits</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Accounts Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Digital Marketing</h4>
+                        <ul>
+                            <li><a href="web-dev.html">Website Development</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="graphic-design.html">Graphic Designing</a></li>
+                            <li><a href="social-med.html">Social Media Marketing</a></li>
+                            <li><a href="content-writing.html">Content Writing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta name="description" content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* Blog Single Page Styles */
+      .blog-single-hero {
+        background: linear-gradient(
+            rgba(3, 74, 177, 0.8),
+            rgba(3, 74, 177, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .blog-single-content {
+        padding: 80px 0;
+      }
+
+      .blog-single-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .blog-single-date {
+        background: var(--secondary-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-right: 15px;
+      }
+
+      .blog-single-category {
+        display: inline-block;
+        background: rgba(3, 74, 177, 0.1);
+        color: var(--primary-color);
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .blog-single-title {
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .blog-single-image {
+        margin-bottom: 40px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-single-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .blog-single-text p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .blog-single-text h2,
+      .blog-single-text h3,
+      .blog-single-text h4 {
+        color: var(--primary-color);
+        margin: 40px 0 20px;
+      }
+
+      .blog-single-text h2 {
+        font-size: 1.8rem;
+      }
+
+      .blog-single-text h3 {
+        font-size: 1.5rem;
+      }
+
+      .blog-single-text ul,
+      .blog-single-text ol {
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .blog-single-text li {
+        margin-bottom: 10px;
+        line-height: 1.8;
+      }
+
+      .blog-single-quote {
+        background: rgba(3, 74, 177, 0.05);
+        border-left: 4px solid var(--primary-color);
+        padding: 30px;
+        margin: 40px 0;
+        font-style: italic;
+        color: #555;
+      }
+
+      .blog-single-tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px 0;
+        align-items: center;
+      }
+
+      .blog-single-tags span {
+        margin-right: 15px;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .blog-single-tags a {
+        display: inline-block;
+        background: rgba(3, 74, 177, 0.1);
+        color: var(--primary-color);
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        margin: 0 5px 8px 0;
+        transition: all 0.3s;
+      }
+
+      .blog-single-tags a:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .blog-single-share {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px 0;
+        align-items: center;
+      }
+
+      .blog-single-share span {
+        margin-right: 15px;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .blog-single-share a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(3, 74, 177, 0.1);
+        color: var(--primary-color);
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .blog-single-share a:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .sidebar-widget {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .widget-title {
+        color: var(--primary-color);
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+      }
+
+      .widget-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary-color);
+      }
+
+      /* Related Posts */
+      .related-posts {
+        margin: 60px 0;
+      }
+
+      .related-posts-title {
+        color: var(--primary-color);
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .related-posts-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary-color);
+      }
+
+      .related-post-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      .related-post-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(3, 74, 177, 0.1);
+      }
+
+      .related-post-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .related-post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .related-post-card:hover .related-post-img img {
+        transform: scale(1.05);
+      }
+
+      .related-post-content {
+        padding: 20px;
+      }
+
+      .related-post-date {
+        font-size: 0.8rem;
+        color: #999;
+        margin-bottom: 10px;
+      }
+
+      .related-post-title {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      .related-post-card:hover .related-post-title {
+        color: var(--secondary-color);
+      }
+
+      .related-post-excerpt {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .related-post-link {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .related-post-link i {
+        margin-left: 8px;
+        transition: transform 0.3s;
+      }
+
+      .related-post-link:hover {
+        color: var(--secondary-color);
+      }
+
+      .related-post-link:hover i {
+        transform: translateX(5px);
+      }
+
+      /* Comments Section */
+      .blog-comments {
+        margin: 60px 0;
+      }
+
+      .blog-comments-title {
+        color: var(--primary-color);
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .blog-comments-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary-color);
+      }
+
+      .comment {
+        display: flex;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .comment-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      .comment-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .comment-content h5 {
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      .comment-meta {
+        font-size: 0.8rem;
+        color: #999;
+        margin-bottom: 10px;
+      }
+
+      .comment-text {
+        color: #555;
+        line-height: 1.7;
+      }
+
+      .comment-reply {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .comment-reply:hover {
+        color: var(--secondary-color);
+      }
+
+      .comment-reply i {
+        margin-left: 5px;
+      }
+
+      .comment-child {
+        margin-left: 90px;
+        margin-top: 30px;
+      }
+
+      /* Comment Form */
+      .comment-form {
+        background: #f9f9f9;
+        padding: 40px;
+        border-radius: 10px;
+        margin-top: 60px;
+      }
+
+      .comment-form-title {
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .comment-form-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary-color);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: none;
+      }
+
+      textarea.form-control {
+        height: 150px;
+        resize: none;
+      }
+
+      .submit-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .submit-btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        .blog-single-title {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .blog-single-hero {
+          padding: 80px 0 60px;
+        }
+
+        .blog-single-content {
+          padding: 50px 0;
+        }
+
+        .blog-single-title {
+          font-size: 1.8rem;
+        }
+
+        .comment-child {
+          margin-left: 40px;
+        }
+
+        .comment-form {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .blog-single-meta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .blog-single-date {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        .comment {
+          flex-direction: column;
+        }
+
+        .comment-img {
+          margin-bottom: 15px;
+        }
+
+        .comment-child {
+          margin-left: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="d-flex align-items-center">
+                <a class="nav-link" href="services.html">Services</a>
+                <a
+                  class="dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </a>
+              </div>
+              <ul
+                class="dropdown-menu p-3 w-100 w-lg-auto"
+                style="
+                  min-width: 600px;
+                  background-color: var(--bs-dropdown-bg);
+                "
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- Medical Care Column -->
+                  <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                  <!-- Divider -->
+                  <div class="border-start border-top d-lg-none my-3"></div>
+                  <div
+                    class="border-start d-none d-lg-block mx-lg-3"
+                    style="height: auto"
+                  ></div>
+
+                  <!-- Digital Marketing Column -->
+                  <div>
+                    <h6 class="dropdown-header">Digital Marketing</h6>
+                    <a class="dropdown-item" href="web-dev.html"
+                      >Website development</a
+                    >
+                    <a class="dropdown-item" href="ui-ux.html"
+                      >UI / UX Designing</a
+                    >
+                    <a class="dropdown-item" href="seo.html"
+                      >Search Engine
+                      <br class="d-none d-lg-block" />Optimization</a
+                    >
+                    <a class="dropdown-item" href="graphic-design.html"
+                      >Graphic Designing <br class="d-none d-lg-block"
+                    /></a>
+                    <a class="dropdown-item" href="social-med.html"
+                      >Social Media <br class="d-none d-lg-block" />
+                      Marketing</a
+                    >
+                    <a class="dropdown-item" href="content-writing.html"
+                      >Content Writing</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="specialities.html"
+                >Specialities</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn btn-primary nav-btn" href="contact.html"
+                >Free Consultation</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/19406042114"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+        alt="WhatsApp Chat"
+    /></a>
+
+    <!-- Blog Single Hero Section -->
+    <section class="blog-single-hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">
+              Top Medical Billing Trends in 2025
+            </h1>
+            <p class="lead">
+              Discover the key trends that will shape medical billing and
+              revenue cycle management in the coming year
+            </p>
+          </div>
+          <!--searhbar-->
+
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search articles..."
+            />
+            <button class="btn btn-primary" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Blog Single Content -->
+    <section class="blog-single-content">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="blog-single-meta">
+              <span class="blog-single-date">May 27, 2025</span>
+              <span class="blog-single-category">Medical Billing</span>
+            </div>
+
+            <h1 class="blog-single-title">
+              Top Medical Billing Trends in 2025
+            </h1>
+
+            <div class="blog-single-image">
+              <img
+                src="./img/acc-receive-1.webp"
+                alt="Medical Billing Trends 2025"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="blog-single-text">
+              <p>
+                The health care landscape isundergoing significant changes, and
+                medical billing is experiencing a parallel evolution. As we move
+                toward 2025,important trends are coming to light that will
+                reshape how health care providers handle their financial
+                processes. Remaining informed about the practice to optimize
+                reimbursement rates, minimize claim rejections, and enhance its
+                financial health.
+              </p>
+
+              <h2>1. AI-Powered Claim Processing</h2>
+              <p>
+                Artificial Intelligence is revolutionizing medical billing by
+                automating repetitive tasks and reducing human error. In 2025,
+                we expect to see:
+              </p>
+              <ul>
+                <li>
+                  Advanced AI systems that can review claims before submission,
+                  catching errors that typically lead to denials
+                </li>
+                <li>
+                  Machine learning algorithms that adapt to specific payer
+                  requirements and patterns
+                </li>
+                <li>
+                  Natural language processing for automated medical coding from
+                  physician notes
+                </li>
+                <li>
+                  Predictive analytics to forecast claim approval probabilities
+                </li>
+              </ul>
+              <p>
+                These technologies can reduce claim rejection rates by up to 40%
+                while significantly speeding up processing times.
+              </p>
+
+              <div class="blog-single-quote">
+                <p>
+                  "By 2025, over 60% of medical billing processes will
+                  incorporate some form of AI assistance, fundamentally changing
+                  how practices manage their revenue cycles."
+                </p>
+              </div>
+
+              <h2>2. Blockchain for Secure Billing Transactions</h2>
+              <p>
+                Blockchain technology is making inroads into healthcare billing
+                systems, offering:
+              </p>
+              <ul>
+                <li>Tamper-proof records of all billing transactions</li>
+                <li>
+                  Secure, transparent sharing of billing information between
+                  providers and payers
+                </li>
+                <li>Reduced fraud through immutable audit trails</li>
+                <li>
+                  Smart contracts that automate payments when conditions are met
+                </li>
+              </ul>
+              <p>
+                While still in early adoption, blockchain could eliminate many
+                current disputes between providers and insurers by providing a
+                single source of truth for all parties.
+              </p>
+
+              <h2>3. Real-Time Claim Adjudication</h2>
+              <p>
+                The days of waiting weeks or months for claim processing are
+                ending. In 2025, more payers will offer:
+              </p>
+              <ul>
+                <li>
+                  Instant claim approval or denial at the point of service
+                </li>
+                <li>Immediate patient responsibility calculations</li>
+                <li>Automated payment processing for approved claims</li>
+                <li>
+                  Real-time eligibility verification with benefits breakdown
+                </li>
+              </ul>
+              <p>
+                This shift will dramatically improve cash flow and reduce
+                accounts receivable days for practices.
+              </p>
+
+              <h2>4. Expanded Telehealth Billing Capabilities</h2>
+              <p>
+                Telehealth isn't going away, and neither are its unique billing
+                challenges. In 2025, expect:
+              </p>
+              <ul>
+                <li>
+                  Standardized reimbursement policies across payers for
+                  telehealth services
+                </li>
+                <li>
+                  Clearer guidelines for hybrid (in-person + virtual) care
+                  billing
+                </li>
+                <li>
+                  Specialized billing codes for emerging telehealth technologies
+                </li>
+                <li>
+                  Automated location and service type verification for proper
+                  coding
+                </li>
+              </ul>
+
+              <h2>5. Patient-Centric Billing Experiences</h2>
+              <p>
+                With patients bearing more financial responsibility, practices
+                must improve the billing experience:
+              </p>
+              <ul>
+                <li>
+                  Personalized payment plans based on AI analysis of patient
+                  financial situations
+                </li>
+                <li>
+                  Mobile-friendly billing portals with one-click payment options
+                </li>
+                <li>Transparent cost estimates before services are rendered</li>
+                <li>
+                  Automated payment reminders via preferred communication
+                  channels
+                </li>
+                <li>
+                  Integration with health savings accounts and flexible spending
+                  accounts
+                </li>
+              </ul>
+
+              <h2>6. Regulatory Compliance Automation</h2>
+              <p>
+                Keeping up with changing regulations will become more manageable
+                with:
+              </p>
+              <ul>
+                <li>
+                  Automated updates to billing systems when regulations change
+                </li>
+                <li>Built-in compliance checks for all claims</li>
+                <li>AI-powered audit preparation tools</li>
+                <li>Real-time alerts for potential compliance issues</li>
+              </ul>
+
+              <h2>Preparing for 2025</h2>
+              <p>
+                To stay competitive in this evolving landscape, practices
+                should:
+              </p>
+              <ol>
+                <li>Evaluate and invest in AI-powered billing solutions</li>
+                <li>Train staff on emerging technologies and processes</li>
+                <li>Implement patient-friendly billing tools</li>
+                <li>Partner with billing services that stay ahead of trends</li>
+                <li>
+                  Regularly assess and optimize their revenue cycle management
+                </li>
+              </ol>
+
+              <p>
+                The medical billing landscape of 2025 will reward practices that
+                embrace innovation while maintaining a focus on compliance and
+                patient experience. By starting your preparation now, you can
+                position your practice for financial success in the coming
+                years.
+              </p>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="related-posts">
+              <h3 class="related-posts-title">You May Also Like</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="related-post-card">
+                    <div class="related-post-img">
+                      <img
+                        src="images/blog-thumb2.jpg"
+                        alt="Optimizing AR Workflows"
+                      />
+                    </div>
+                    <div class="related-post-content">
+                      <div class="related-post-date">April 18, 2025</div>
+                      <h4 class="related-post-title">
+                        <a href="#"
+                          >Optimizing AR Workflows for Maximum Efficiency</a
+                        >
+                      </h4>
+                      <p class="related-post-excerpt">
+                        Learn how to streamline your accounts receivable
+                        processes to improve cash flow and reduce outstanding
+                        balances.
+                      </p>
+                      <a href="#" class="related-post-link"
+                        >Read More <i class="fas fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="related-post-card">
+                    <div class="related-post-img">
+                      <img
+                        src="images/blog-thumb3.jpg"
+                        alt="ICD-11 Transition"
+                      />
+                    </div>
+                    <div class="related-post-content">
+                      <div class="related-post-date">April 2, 2025</div>
+                      <h4 class="related-post-title">
+                        <a href="#"
+                          >ICD-11 Transition: What Practices Need to Know</a
+                        >
+                      </h4>
+                      <p class="related-post-excerpt">
+                        Prepare your practice for the upcoming ICD-11 coding
+                        transition with these essential tips and strategies.
+                      </p>
+                      <a href="#" class="related-post-link"
+                        >Read More <i class="fas fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comments Section 
+                    <div class="blog-comments">
+                        <h3 class="blog-comments-title">Comments (3)</h3>
+                        
+                        <div class="comment">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Brown">
+                            </div>
+                            <div class="comment-content">
+                                <h5>Michael Brown</h5>
+                                <div class="comment-meta">May 20, 2025 at 10:15 AM</div>
+                                <p class="comment-text">Great insights! We've already started implementing some AI tools in our billing department and have seen a 30% reduction in claim denials. Looking forward to exploring blockchain solutions next.</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="comment comment-child">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Lisa Chen">
+                            </div>
+                            <div class="comment-content">
+                                <h5>Lisa Chen</h5>
+                                <div class="comment-meta">May 21, 2025 at 2:30 PM</div>
+                                <p class="comment-text">Michael, which AI tools are you using? We're evaluating several options and would love recommendations from someone with real-world experience.</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="comment">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="David Wilson">
+                            </div>
+                            <div class="comment-content">
+                                <h5>David Wilson</h5>
+                                <div class="comment-meta">May 22, 2025 at 9:05 AM</div>
+                                <p class="comment-text">The patient-centric billing section really resonates with us. We implemented transparent cost estimates last year and saw patient satisfaction scores improve by 25%. Great article overall!</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <!-- Comment Form -->
+            <div class="comment-form">
+              <h3 class="comment-form-title">Leave a Comment</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your Email"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    placeholder="Your Comment"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">
+                  Post Comment
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Optimize Your Medical Billing?</h2>
+        <p>
+          Our experts can help you implement these 2025 trends in your practice
+          today. Contact us for a free consultation.
+        </p>
+        <a href="contact.html" class="btn cta-btn">Get Started Now</a>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Logo and About -->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-about">
+              <a class="footer-logo" href="index.html">
+                <img
+                  src="./img/logo-4.png"
+                  alt="Company Logo"
+                  width="230"
+                  height="100"
+                />
+              </a>
+              <p>
+                Streamlining Healthcare Billing so you can focus on what matters
+                most, patient care.
+              </p>
+              <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61576403553969"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://x.com/SHMEDEX"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/shmedex/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="https://www.linkedin.com/company/105496552"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+            </div>
+          </div>
+
+          <!-- Medical Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Medical Services</h4>
+              <ul>
+                <li><a href="medical-billing.html">Medical Billing</a></li>
+                <li>
+                  <a href="Medical-credentialing.html">Medical Credentialing</a>
+                </li>
+                <li><a href="Medical-coding.html">Medical Coding</a></li>
+                <li>
+                  <a href="Verification-of-benefits.html"
+                    >Verification of Benefits</a
+                  >
+                </li>
+                <li><a href="Denial-management.html">Denial Management</a></li>
+                <li>
+                  <a href="Acc-rec-services.html"
+                    >Accounts Receivable Services</a
+                  >
+                </li>
+                <li>
+                  <a href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Digital Marketing</h4>
+              <ul>
+                <li><a href="web-dev.html">Website Development</a></li>
+                <li><a href="ui-ux.html">UI/UX Design</a></li>
+                <li><a href="seo.html">SEO Services</a></li>
+                <li><a href="graphic-design.html">Graphic Designing</a></li>
+                <li><a href="social-med.html">Social Media Marketing</a></li>
+                <li><a href="content-writing.html">Content Writing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

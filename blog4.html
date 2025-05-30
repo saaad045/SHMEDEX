@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta name="description" content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        /* Blog Single Page Styles */
+        .blog-single-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .blog-single-content {
+            padding: 80px 0;
+        }
+
+        .blog-single-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-single-date {
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .blog-single-category {
+            display: inline-block;
+            background: rgba(3, 74, 177, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .blog-single-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .blog-single-image {
+            margin-bottom: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-single-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-single-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .blog-single-text h2,
+        .blog-single-text h3,
+        .blog-single-text h4 {
+            color: var(--primary-color);
+            margin: 40px 0 20px;
+        }
+
+        .blog-single-text h2 {
+            font-size: 1.8rem;
+        }
+
+        .blog-single-text h3 {
+            font-size: 1.5rem;
+        }
+
+        .blog-single-text ul,
+        .blog-single-text ol {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .blog-single-text li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .blog-single-quote {
+            background: rgba(3, 74, 177, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 30px;
+            margin: 40px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .blog-single-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            align-items: center;
+        }
+
+        .blog-single-tags span {
+            margin-right: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .blog-single-tags a {
+            display: inline-block;
+            background: rgba(3, 74, 177, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin: 0 5px 8px 0;
+            transition: all 0.3s;
+        }
+
+        .blog-single-tags a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .blog-single-share {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            align-items: center;
+        }
+
+        .blog-single-share span {
+            margin-right: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .blog-single-share a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(3, 74, 177, 0.1);
+            color: var(--primary-color);
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .blog-single-share a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Author Box */
+        .blog-author {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .blog-author {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .blog-author-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 768px) {
+            .blog-author-img {
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+        }
+
+        .blog-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .blog-author-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .blog-author-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(3, 74, 177, 0.1);
+            color: var(--primary-color);
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .blog-author-social a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin: 60px 0;
+        }
+
+        .related-posts-title {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .related-posts-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .related-post-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .related-post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.1);
+        }
+
+        .related-post-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .related-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .related-post-card:hover .related-post-img img {
+            transform: scale(1.05);
+        }
+
+        .related-post-content {
+            padding: 20px;
+        }
+
+        .related-post-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .related-post-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .related-post-card:hover .related-post-title {
+            color: var(--secondary-color);
+        }
+
+        .related-post-excerpt {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .related-post-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .related-post-link i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .related-post-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .related-post-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Comments Section */
+        .blog-comments {
+            margin: 60px 0;
+        }
+
+        .blog-comments-title {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .blog-comments-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .comment {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comment-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .comment-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-content h5 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .comment-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .comment-text {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .comment-reply {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .comment-reply:hover {
+            color: var(--secondary-color);
+        }
+
+        .comment-reply i {
+            margin-left: 5px;
+        }
+
+        .comment-child {
+            margin-left: 90px;
+            margin-top: 30px;
+        }
+
+        /* Comment Form */
+        .comment-form {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 60px;
+        }
+
+        .comment-form-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .comment-form-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .blog-single-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .blog-single-hero {
+                padding: 80px 0 60px;
+            }
+
+            .blog-single-content {
+                padding: 50px 0;
+            }
+
+            .blog-single-title {
+                font-size: 1.8rem;
+            }
+
+            .comment-child {
+                margin-left: 40px;
+            }
+
+            .comment-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .blog-single-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .blog-single-date {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .comment {
+                flex-direction: column;
+            }
+
+            .comment-img {
+                margin-bottom: 15px;
+            }
+
+            .comment-child {
+                margin-left: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                        <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="web-dev.html">Website development</a>
+                                    <a class="dropdown-item" href="ui-ux.html">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="seo.html">Search Engine <br
+                                            class="d-none d-lg-block">Optimization</a>
+                                            <a class="dropdown-item" href="graphic-design.html">Graphic Designing <br
+                                            class="d-none d-lg-block"></a>
+                                    <a class="dropdown-item" href="social-med.html">Social Media <br
+                                            class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-writing.html">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/19406042114" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"></a>
+
+    <!-- Blog Single Hero Section -->
+    <section class="blog-single-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Telehealth Billing Best Practices</h1>
+                    <p class="lead">Navigate the complexities of telehealth billing with these essential coding and
+                        documentation tips</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Blog Single Content -->
+    <section class="blog-single-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="blog-single-meta">
+                        <span class="blog-single-date">March 22, 2025</span>
+                        <span class="blog-single-category">Telehealth</span>
+                    </div>
+
+                    <h1 class="blog-single-title">Telehealth Billing Best Practices for Healthcare Providers</h1>
+
+                    <div class="blog-single-image">
+                        <img src="./img/telehealth.webp" alt="Telehealth Billing Best Practices" class="img-fluid">
+                    </div>
+
+                    <div class="blog-single-text">
+                        <p>Telehealth has become an essential component of modern healthcare delivery, but billing for
+                            these services remains complex and ever-changing. With varying payer requirements and
+                            evolving regulations, providers need a clear strategy to ensure proper reimbursement for
+                            telehealth services. This guide covers the essential best practices for telehealth billing
+                            in 2025.</p>
+
+                        <h2>Understanding Telehealth Billing Fundamentals</h2>
+                        <p>Telehealth billing differs from traditional in-person visits in several key ways:</p>
+                        <ul>
+                            <li><strong>Place of Service (POS) codes:</strong> Typically POS 02 for telehealth</li>
+                            <li><strong>Modifiers:</strong> Required by many payers to identify telehealth services</li>
+                            <li><strong>Originating site requirements:</strong> Some payers restrict where patients can
+                                receive telehealth</li>
+                            <li><strong>Technology requirements:</strong> Specific platforms may be required for
+                                reimbursement</li>
+                        </ul>
+
+                        <div class="blog-single-quote">
+                            <p>"Proper telehealth billing can increase practice revenue by 15-20% while improving
+                                patient access. However, incorrect billing leads to denials and lost revenue."</p>
+                        </div>
+
+                        <h2>2025 Telehealth CPT Codes</h2>
+                        <p>The most commonly used telehealth codes in 2025 include:</p>
+
+                        <h3>Evaluation and Management (E/M) Codes</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>CPT Code</th>
+                                        <th>Description</th>
+                                        <th>Typical Reimbursement</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>99202-99215</td>
+                                        <td>Office/outpatient visits (level 1-5)</td>
+                                        <td>Same as in-person</td>
+                                    </tr>
+                                    <tr>
+                                        <td>99421-99423</td>
+                                        <td>Online digital E/M services</td>
+                                        <td>20-30% less than video</td>
+                                    </tr>
+                                    <tr>
+                                        <td>98970-98972</td>
+                                        <td>Remote therapeutic monitoring</td>
+                                        <td>Varies by payer</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>Specialty-Specific Telehealth Codes</h3>
+                        <ul>
+                            <li><strong>Psychiatry:</strong> 90785-90899 series</li>
+                            <li><strong>Physical Therapy:</strong> 97161-97164</li>
+                            <li><strong>Nutritional Counseling:</strong> 97802-97804</li>
+                            <li><strong>Chronic Care Management:</strong> 99490, 99439</li>
+                        </ul>
+
+                        <h2>Essential Modifiers for Telehealth Billing</h2>
+                        <p>Using the correct modifiers is critical for proper telehealth reimbursement:</p>
+                        <ul>
+                            <li><strong>95:</strong> Synchronous telemedicine service (most common)</li>
+                            <li><strong>GT:</strong> Via interactive audio/video (some Medicare plans)</li>
+                            <li><strong>GQ:</strong> Asynchronous telehealth (store-and-forward)</li>
+                            <li><strong>FQ:</strong> Audio-only communication</li>
+                            <li><strong>POS 02:</strong> Place of service code for telehealth</li>
+                        </ul>
+
+                        <h2>Payer-Specific Telehealth Requirements</h2>
+                        <p>Each major payer has unique telehealth billing rules:</p>
+
+                        <h3>Medicare</h3>
+                        <ul>
+                            <li>Coverage expanded through December 2025 under current legislation</li>
+                            <li>Requires GT or 95 modifier</li>
+                            <li>Audio-only allowed for mental health and certain other services</li>
+                            <li>Patient must be in an eligible originating site (with exceptions)</li>
+                        </ul>
+
+                        <h3>Medicaid</h3>
+                        <ul>
+                            <li>Varies by state - check your state's Medicaid program</li>
+                            <li>Many states now cover audio-only visits</li>
+                            <li>Some require specific consent forms</li>
+                        </ul>
+
+                        <h3>Commercial Payers</h3>
+                        <ul>
+                            <li>Most follow Medicare guidelines but with variations</li>
+                            <li>Many now permanently cover telehealth at parity with in-person visits</li>
+                            <li>Some require specific platform certifications</li>
+                        </ul>
+
+                        <h2>Documentation Best Practices</h2>
+                        <p>Proper documentation is essential for telehealth billing compliance:</p>
+                        <ol>
+                            <li><strong>Verify patient location:</strong> Document the patient's physical address</li>
+                            <li><strong>Record technology used:</strong> Note the platform and connection type
+                                (video/audio)</li>
+                            <li><strong>Obtain consent:</strong> Document patient consent for telehealth services</li>
+                            <li><strong>Detail time spent:</strong> Especially important for time-based codes</li>
+                            <li><strong>Note technical issues:</strong> Document any connection problems</li>
+                        </ol>
+
+                        <h2>Common Telehealth Billing Mistakes to Avoid</h2>
+                        <p>These errors frequently lead to denials:</p>
+                        <ul>
+                            <li><strong>Incorrect POS code:</strong> Using the office POS instead of 02</li>
+                            <li><strong>Missing modifiers:</strong> Forgetting required telehealth modifiers</li>
+                            <li><strong>Unbundling services:</strong> Billing separately for services that should be
+                                bundled</li>
+                            <li><strong>Inadequate documentation:</strong> Failing to document required telehealth
+                                elements</li>
+                            <li><strong>Tech platform issues:</strong> Using non-compliant technology</li>
+                        </ul>
+
+                        <h2>Telehealth Billing Workflow Optimization</h2>
+                        <p>Streamline your telehealth billing process:</p>
+
+                        <h3>Pre-Visit</h3>
+                        <ul>
+                            <li>Verify insurance coverage for telehealth</li>
+                            <li>Obtain necessary patient consents</li>
+                            <li>Confirm technology requirements</li>
+                        </ul>
+
+                        <h3>During Visit</h3>
+                        <ul>
+                            <li>Document all required telehealth elements</li>
+                            <li>Note start/end times for time-based coding</li>
+                            <li>Record any technical difficulties</li>
+                        </ul>
+
+                        <h3>Post-Visit</h3>
+                        <ul>
+                            <li>Apply correct codes and modifiers</li>
+                            <li>Include required documentation</li>
+                            <li>Track denials and adjust processes accordingly</li>
+                        </ul>
+
+                        <h2>State-Specific Telehealth Regulations</h2>
+                        <p>In addition to federal rules, be aware of state requirements:</p>
+                        <ul>
+                            <li><strong>Licensure:</strong> Some states require special licenses for cross-state
+                                telehealth</li>
+                            <li><strong>Prescribing:</strong> Rules vary for prescribing via telehealth</li>
+                            <li><strong>Consent:</strong> Additional consent requirements in some states</li>
+                            <li><strong>Private payer laws:</strong> Many states have telehealth parity laws</li>
+                        </ul>
+
+                        <h2>Emerging Telehealth Billing Trends</h2>
+                        <p>What's new in 2025 telehealth billing:</p>
+                        <ul>
+                            <li><strong>Expanded RPM coverage:</strong> More payers covering remote patient monitoring
+                            </li>
+                            <li><strong>AI-assisted coding:</strong> New tools to help select proper telehealth codes
+                            </li>
+                            <li><strong>Behavioral health expansions:</strong> More covered services for mental health
+                            </li>
+                            <li><strong>Specialty-specific codes:</strong> New codes for specialties adopting telehealth
+                            </li>
+                        </ul>
+
+                        <h2>Implementing a Successful Telehealth Billing Program</h2>
+                        <p>Follow these steps to optimize your telehealth billing:</p>
+                        <ol>
+                            <li>Conduct a payer-by-payer review of telehealth coverage</li>
+                            <li>Train all staff on telehealth billing requirements</li>
+                            <li>Create cheat sheets for common scenarios</li>
+                            <li>Implement pre-claim reviews for telehealth services</li>
+                            <li>Monitor denial rates and adjust processes</li>
+                            <li>Stay updated on regulatory changes</li>
+                        </ol>
+
+                        <h2>Conclusion</h2>
+                        <p>Telehealth billing doesn't have to be complicated when you understand the rules and implement
+                            systematic processes. By following these best practices, you can maximize reimbursement
+                            while maintaining compliance. Remember that telehealth regulations continue to evolve, so
+                            regular review of your billing practices is essential to avoid lost revenue and potential
+                            audits.</p>
+                    </div>
+<!--
+                    <div class="blog-single-tags">
+                        <span>Tags:</span>
+                        <a href="#">Telehealth</a>
+                        <a href="#">Medical Billing</a>
+                        <a href="#">CPT Codes</a>
+                        <a href="#">Healthcare Technology</a>
+                    </div>
+
+                    <div class="blog-single-share">
+                        <span>Share:</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+
+                    <!-- Author Box 
+                    <div class="blog-author">
+                        <div class="blog-author-img">
+                            <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Dr. Emily Chen">
+                        </div>
+                        <div class="blog-author-info">
+                            <h4>Dr. Emily Chen</h4>
+                            <p>Dr. Chen is a telehealth expert and healthcare consultant with over a decade of
+                                experience helping practices implement successful telehealth programs. As SHMEDEX's
+                                Director of Telehealth Services, she has trained hundreds of providers on telehealth
+                                billing best practices.</p>
+                            <div class="blog-author-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <!-- Related Posts -->
+                    <div class="related-posts">
+                        <h3 class="related-posts-title">You May Also Like</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="related-post-card">
+                                    <div class="related-post-img">
+                                        <img src="images/blog-thumb4.jpg" alt="Telehealth Credentialing">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <div class="related-post-date">March 22, 2025</div>
+                                        <h4 class="related-post-title"><a href="#">Telehealth Credentialing Across State
+                                                Lines</a></h4>
+                                        <p class="related-post-excerpt">Navigating the complex landscape of multi-state
+                                            telehealth credentialing and licensure requirements.</p>
+                                        <a href="#" class="related-post-link">Read More <i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="related-post-card">
+                                    <div class="related-post-img">
+                                        <img src="images/blog-thumb3.jpg" alt="Reducing Claim Denials">
+                                    </div>
+                                    <div class="related-post-content">
+                                        <div class="related-post-date">April 10, 2025</div>
+                                        <h4 class="related-post-title"><a href="#">Reducing Claim Denials by 40%</a>
+                                        </h4>
+                                        <p class="related-post-excerpt">Proven strategies to identify denial patterns
+                                            and implement corrective actions in your medical practice.</p>
+                                        <a href="#" class="related-post-link">Read More <i
+                                                class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section 
+                    <div class="blog-comments">
+                        <h3 class="blog-comments-title">Comments (3)</h3>
+
+                        <div class="comment">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Michael Johnson">
+                            </div>
+                            <div class="comment-content">
+                                <h5>Dr. Michael Johnson</h5>
+                                <div class="comment-meta">March 25, 2025 at 10:15 AM</div>
+                                <p class="comment-text">This is exactly what our practice needed! We've been struggling
+                                    with telehealth billing since expanding our virtual services last year. The modifier
+                                    information alone will probably save us thousands in denials.</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="comment comment-child">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/women/38.jpg" alt="Sarah Williams">
+                            </div>
+                            <div class="comment-content">
+                                <h5>Sarah Williams</h5>
+                                <div class="comment-meta">March 25, 2025 at 2:30 PM</div>
+                                <p class="comment-text">Dr. Johnson, we had the same experience. After implementing
+                                    these practices, our telehealth denial rate dropped from 22% to just 6% in three
+                                    months. The documentation tips were especially helpful.</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="comment">
+                            <div class="comment-img">
+                                <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Robert Chen">
+                            </div>
+                            <div class="comment-content">
+                                <h5>Robert Chen</h5>
+                                <div class="comment-meta">March 27, 2025 at 4:45 PM</div>
+                                <p class="comment-text">Does anyone have experience with the new AI coding assistants
+                                    for telehealth? We're considering implementing one but worried about the learning
+                                    curve for our staff.</p>
+                                <a href="#" class="comment-reply">Reply <i class="fas fa-reply"></i></a>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <!-- Comment Form -->
+                    <div class="comment-form">
+                        <h3 class="comment-form-title">Leave a Comment</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Comment"></textarea>
+                            </div>
+                            <button type="submit" class="btn submit-btn">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Need Help Optimizing Your Telehealth Billing?</h2>
+            <p>Our telehealth billing experts can help you maximize reimbursement while ensuring compliance with all
+                regulations.</p>
+            <a href="contact.html" class="btn cta-btn">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="index.html">
+                            <img src="./img/logo-4.png" alt="Company Logo" width="230" height="100">
+                        </a>
+                        <p>Streamlining Healthcare Billing so you can focus on what matters most, patient care.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576403553969"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/SHMEDEX"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shmedex/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/105496552"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                   <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Medical Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Verification-of-benefits.html">Verification of Benefits</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Accounts Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Digital Marketing</h4>
+                        <ul>
+                            <li><a href="web-dev.html">Website Development</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="graphic-design.html">Graphic Designing</a></li>
+                            <li><a href="social-med.html">Social Media Marketing</a></li>
+                            <li><a href="content-writing.html">Content Writing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+<script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script></body>
+
+</html>

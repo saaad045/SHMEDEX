@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounts Receivable Services | SHMEDEX</title>
+    <meta
+      name="description"
+      content="Professional accounts receivable services for healthcare providers to maximize revenue, reduce outstanding claims, and improve cash flow."
+    />
+    <!-- Favicon setup -->
+    <link
+      rel="icon"
+      href="./favicon/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="./favicon/android-chrome-192x192.png"
+      type="image/png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      href="./favicon/android-chrome-512x512.png"
+      type="image/png"
+      sizes="512x512"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./favicon/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="shortcut icon"
+      href="./favicon/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .service-hero {
+        background: linear-gradient(
+            rgba(3, 74, 177, 0.8),
+            rgba(3, 74, 177, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .benefit-card {
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        height: 100%;
+        border-top: 4px solid var(--secondary-color);
+        background: white;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+      }
+
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .process-step {
+        position: relative;
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+
+      .process-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        background: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      /* .pricing-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+      }
+
+      .pricing-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .pricing-body {
+        padding: 30px;
+        background: white;
+      }
+
+      .price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .pricing-features li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .pricing-features li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        font-size: 0.8rem;
+      } */
+
+      .workflow-step {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+      }
+
+      .workflow-step:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: #0d6efd;
+        border-radius: 50%;
+      }
+
+      .workflow-connector {
+        position: absolute;
+        left: 9px;
+        top: 25px;
+        bottom: -35px;
+        width: 2px;
+        background-color: #0d6efd;
+      }
+
+      .workflow-step:last-child .workflow-connector {
+        display: none;
+      }
+      
+      .recovery-stats {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        height: 100%;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="d-flex align-items-center">
+                <a class="nav-link" href="services.html">Services</a>
+                <a
+                  class="dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </a>
+              </div>
+              <ul
+                class="dropdown-menu p-3 w-100 w-lg-auto"
+                style="
+                  min-width: 600px;
+                  background-color: var(--bs-dropdown-bg);
+                "
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- Medical Care Column -->
+                  <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                  <!-- Divider -->
+                  <div class="border-start border-top d-lg-none my-3"></div>
+                  <div
+                    class="border-start d-none d-lg-block mx-lg-3"
+                    style="height: auto"
+                  ></div>
+
+                  <!-- Digital Marketing Column -->
+                  <div>
+                    <h6 class="dropdown-header">Digital Marketing</h6>
+                    <a class="dropdown-item" href="web-dev.html"
+                      >Website development</a
+                    >
+                    <a class="dropdown-item" href="ui-ux.html"
+                      >UI / UX Designing</a
+                    >
+                    <a class="dropdown-item" href="seo.html"
+                      >Search Engine
+                      <br class="d-none d-lg-block" />Optimization</a
+                    >
+                    <a class="dropdown-item" href="graphic-design.html"
+                      >Graphic Designing <br class="d-none d-lg-block"
+                    /></a>
+                    <a class="dropdown-item" href="social-med.html"
+                      >Social Media <br class="d-none d-lg-block" />
+                      Marketing</a
+                    >
+                    <a class="dropdown-item" href="content-writing.html"
+                      >Content Writing</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="specialities.html"
+                >Specialities</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn btn-primary nav-btn" href="contact.html"
+                >Free Consultation</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/19406042114"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+        alt="WhatsApp Chat"
+    /></a>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Accounts Receivable Services</h1>
+        <p class="lead">
+          Maximize your revenue by recovering outstanding payments and reducing accounts receivable days
+        </p>
+        <a
+          href="contact.html"
+          class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s"
+        >
+          Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="mb-4">Optimize Your Accounts Receivable Process</h2>
+            <p>
+              Our comprehensive Accounts Receivable services help healthcare providers recover outstanding payments, reduce AR days, and improve cash flow. We specialize in identifying and resolving unpaid claims, underpayments, and denied claims that are negatively impacting your revenue.
+            </p>
+            <p>
+              With our expert AR management, you can expect:
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-check-circle text-primary me-2"></i> Faster payment turnaround
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-check-circle text-primary me-2"></i> Reduced accounts receivable days
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-check-circle text-primary me-2"></i> Higher collection rates
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-check-circle text-primary me-2"></i>
+                Improved cash flow
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-primary me-2"></i> Detailed reporting and analytics
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="./img/acc-receive-1.webp"
+              alt="Accounts Receivable Management"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recovery Statistics -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Recovery Success</h2>
+          <p class="text-center mx-auto">
+            We consistently deliver outstanding results for our clients
+          </p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="recovery-stats">
+              <div class="stat-number">85%</div>
+              <h3>Claim Recovery Rate</h3>
+              <p>Average recovery rate on aged claims we work on</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="recovery-stats">
+              <div class="stat-number">45%</div>
+              <h3>Reduction in AR Days</h3>
+              <p>Typical reduction in accounts receivable days</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="recovery-stats">
+              <div class="stat-number">95%</div>
+              <h3>Client Retention</h3>
+              <p>Of clients continue our services year after year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Benefits of Our AR Services</h2>
+          <p class="text-center mx-auto">
+            Why healthcare providers choose our accounts receivable solutions
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Increased Revenue</h3>
+              <p>
+                Recover lost revenue from unpaid claims, underpayments, and denials that would otherwise be written off.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Reduced AR Days</h3>
+              <p>
+                Our systematic follow-up process significantly reduces your accounts receivable days.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-search-dollar"></i>
+              </div>
+              <h3>Claims Analysis</h3>
+              <p>
+                Comprehensive analysis of your claims to identify patterns and prevent future payment delays.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <h3>Denial Management</h3>
+              <p>
+                Expert handling of claim denials with effective appeals to maximize reimbursement.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3>Dedicated Support</h3>
+              <p>
+                Your own AR specialist who knows your practice and payer mix intimately.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <h3>Detailed Reporting</h3>
+              <p>
+                Monthly reports with key metrics and actionable insights to improve your revenue cycle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Our Process-->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our AR Recovery Process</h2>
+          <p class="text-center mx-auto">
+            A proven 5-step methodology to maximize your collections
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="process-step">
+              <div class="process-number">1</div>
+              <div class="process-content">
+                <h3>AR Analysis & Assessment</h3>
+                <p>
+                  We conduct a thorough review of your accounts receivable to identify all outstanding claims, underpayments, and denials.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-number">2</div>
+              <div class="process-content">
+                <h3>Claims Prioritization</h3>
+                <p>
+                  Claims are categorized and prioritized based on age, dollar amount, and payer to maximize recovery.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-number">3</div>
+              <div class="process-content">
+                <h3>Aggressive Follow-Up</h3>
+                <p>
+                  Our team initiates systematic follow-up with payers through phone, email, and online portals.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-number">4</div>
+              <div class="process-content">
+                <h3>Denial Resolution</h3>
+                <p>
+                  We investigate and appeal denied claims, correcting errors and providing additional documentation when needed.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-number">5</div>
+              <div class="process-content">
+                <h3>Payment Posting & Reporting</h3>
+                <p>
+                  All recovered payments are posted to your system with detailed reporting on recoveries and ongoing issues.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section 
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Flexible Pricing Options</h2>
+          <p class="text-center mx-auto">
+            Choose the solution that works best for your practice
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Basic AR Service 
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Basic AR Service</h3>
+                <p>For small practices</p>
+              </div>
+              <div class="pricing-body">
+                <div class="price mb-3">5-7%</div>
+                <p>of recovered amounts</p>
+                <hr />
+                <ul class="pricing-features">
+                  <li>Claims over 60 days old</li>
+                  <li>Monthly follow-up</li>
+                  <li>Basic denial management</li>
+                  <li>Monthly recovery report</li>
+                  <li>Email support</li>
+                  <li>Up to 50 claims/month</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary w-100 mt-4"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Comprehensive AR Service 
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Comprehensive AR</h3>
+                <p>For medium practices</p>
+              </div>
+              <div class="pricing-body">
+                <div class="price mb-3">4-6%</div>
+                <p>of recovered amounts</p>
+                <hr />
+                <ul class="pricing-features">
+                  <li>Claims over 30 days old</li>
+                  <li>Weekly follow-up</li>
+                  <li>Advanced denial management</li>
+                  <li>Detailed analytics</li>
+                  <li>Phone & email support</li>
+                  <li>Up to 200 claims/month</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary w-100 mt-4"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Full AR Management 
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Full AR Management</h3>
+                <p>For large practices</p>
+              </div>
+              <div class="pricing-body">
+                <div class="price mb-3">3-5%</div>
+                <p>of recovered amounts</p>
+                <hr />
+                <ul class="pricing-features">
+                  <li>All outstanding claims</li>
+                  <li>Daily follow-up</li>
+                  <li>Full denial management</li>
+                  <li>Custom reporting</li>
+                  <li>Dedicated account manager</li>
+                  <li>Unlimited claims</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary w-100 mt-4"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Improve Your Cash Flow?</h2>
+        <p>
+          Let us help you recover what you're owed and optimize your revenue cycle.
+        </p>
+        <a href="contact.html" class="btn cta-btn">Start AR Recovery Today</a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Accounts Receivable FAQs</h2>
+          <p class="text-center mx-auto">
+            Common questions about our AR services
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div
+                class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq1"
+                  >
+                    How quickly can I expect to see results?
+                  </button>
+                </h3>
+                <div
+                  id="faq1"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Most clients see their first recovered payments within 2-4 weeks of engagement. The speed of recovery depends on payer responsiveness and the age of the claims. Older claims typically take longer to resolve but we work aggressively on all claims simultaneously.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div
+                class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq2"
+                  >
+                    Do you work on claims that are over a year old?
+                  </button>
+                </h3>
+                <div
+                  id="faq2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, we specialize in recovering payments on aged claims, even those over a year old. While payer deadlines vary, many claims can still be recovered through appeals and reconsideration requests. We've successfully recovered payments on claims up to 3 years old in some cases.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div
+                class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq3"
+                  >
+                    How do you handle payments you recover?
+                  </button>
+                </h3>
+                <div
+                  id="faq3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    All payments are sent directly to your practice, never to us. We provide detailed documentation of each recovery and work with your team to ensure proper posting to patient accounts. Our fee is based on a percentage of what we actually recover for you.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div
+                class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq4"
+                  >
+                    Can you help prevent future AR problems?
+                  </button>
+                </h3>
+                <div
+                  id="faq4"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Absolutely. Part of our service includes identifying patterns in claim denials and underpayments. We provide actionable recommendations to improve your front-end processes, reducing future AR issues. Many clients see a 30-50% reduction in new AR problems after implementing our suggestions.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Logo and About -->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-about">
+              <a class="footer-logo" href="index.html">
+                <img
+                  src="./img/logo-4.png"
+                  alt="Company Logo"
+                  width="230"
+                  height="100"
+                />
+              </a>
+              <p>
+                Streamlining Healthcare Billing so you can focus on what matters
+                most, patient care.
+              </p>
+              <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61576403553969"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://x.com/SHMEDEX"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/shmedex/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="https://www.linkedin.com/company/105496552"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+
+           <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="specialities.html">Specialties</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Medical Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Medical Services</h4>
+              <ul>
+                <li><a href="medical-billing.html">Medical Billing</a></li>
+                <li>
+                  <a href="Medical-credentialing.html">Medical Credentialing</a>
+                </li>
+                <li><a href="Medical-coding.html">Medical Coding</a></li>
+                <li>
+                  <a href="Verification-of-benefits.html"
+                    >Verification of Benefits</a
+                  >
+                </li>
+                <li><a href="Denial-management.html">Denial Management</a></li>
+                <li>
+                  <a href="Acc-rec-services.html"
+                    >Accounts Receivable Services</a
+                  >
+                </li>
+                <li>
+                  <a href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Digital Marketing</h4>
+              <ul>
+                <li><a href="web-dev.html">Website Development</a></li>
+                <li><a href="ui-ux.html">UI/UX Design</a></li>
+                <li><a href="seo.html">SEO Services</a></li>
+                <li><a href="graphic-design.html">Graphic Designing</a></li>
+                <li><a href="social-med.html">Social Media Marketing</a></li>
+                <li><a href="content-writing.html">Content Writing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta name="description"
+        content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .patient-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .benefit-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+            background: white;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* .pricing-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-body {
+            padding: 30px;
+            background: white;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        }*/
+
+
+        .workflow-step {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .workflow-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: #0d6efd;
+            border-radius: 50%;
+        }
+
+        .workflow-connector {
+            position: absolute;
+            left: 9px;
+            top: 25px;
+            bottom: -35px;
+            width: 2px;
+            background-color: #0d6efd;
+        }
+
+        .workflow-step:last-child .workflow-connector {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                        <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="web-dev.html">Website development</a>
+                                    <a class="dropdown-item" href="ui-ux.html">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="seo.html">Search Engine <br
+                                            class="d-none d-lg-block">Optimization</a>
+                                    <a class="dropdown-item" href="graphic-design.html">Graphic Designing <br
+                                            class="d-none d-lg-block"></a>
+                                    <a class="dropdown-item" href="social-med.html">Social Media <br
+                                            class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-writing.html">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+
+    <section class="patient-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Verification Of Benefits</h1>
+            <p class="lead">Ensure coverage before services are rendered to maximize reimbursements and minimize claim
+                denials</p>
+            <a href="contact.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/19406042114" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"></a>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Service Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Streamline Your Verification Process</h2>
+                    <p>Our Verification service helps healthcare providers confirm insurance
+                        coverage, benefits, and patient responsibilities before services are rendered. This proactive
+                        approach significantly reduces claim denials and improves cash flow.</p>
+                    <p>We verify eligibility with all major insurance carriers in real-time, providing you with accurate
+                        information about:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Active coverage status
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Plan benefits and
+                            limitations</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Copay, deductible, and
+                            coinsurance amounts</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Authorization
+                            requirements</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Effective and termination dates</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./img/patient-verify-1.webp" alt="Patient Eligibility Verification Process"
+                        class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Verification of Benefits Services</h2>
+                <p class="text-center mx-auto">Ensure accuracy, speed, and transparency before services are rendered</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Accurate Eligibility Checks</h3>
+                        <p>We verify insurance coverage, policy status, and plan details to ensure patients are eligible
+                            before their appointments.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Faster Approvals</h3>
+                        <p>Our team expedites verification processes, reducing delays in authorizations and improving
+                            scheduling efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Minimized Claim Denials</h3>
+                        <p>By catching issues early, we drastically reduce the risk of claim denials and rework due to
+                            incorrect insurance data.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Automated Tools</h3>
+                        <p>We use cutting-edge software to conduct real-time VOB checks and deliver reports directly to
+                            your front desk or intake team.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headphones-alt"></i>
+                        </div>
+                        <h3>Live VOB Specialists</h3>
+                        <p>Our dedicated team personally contacts payers for accurate and complete benefit details that
+                            automated tools may miss.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Clear Cost Estimates</h3>
+                        <p>We provide detailed benefit summaries, copay, coinsurance, and deductible estimates to
+                            improve patient satisfaction and collections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Our Process
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Credentialing Process</h2>
+                <p class="text-center mx-auto">A meticulous 7-step approach to ensure seamless provider enrollment</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Provider Documentation Collection</h3>
+                            <p>We gather and organize all required licenses, certifications, malpractice insurance, and
+                                professional references.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Primary Source Verification</h3>
+                            <p>Direct verification of all credentials with issuing institutions and boards.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Application Preparation</h3>
+                            <p>Completion of all payer-specific forms with optimized responses for approval.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Payer Submission & Follow-Up</h3>
+                            <p>Electronic submission with proactive status tracking and escalation.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>Committee Review Management</h3>
+                            <p>Liaison with credentialing committees to address any queries.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>Contracting & Fee Schedule Negotiation</h3>
+                            <p>Assistance with payer contracting for optimal reimbursement rates.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">7</div>
+                        <div class="process-content">
+                            <h3>Ongoing Maintenance</h3>
+                            <p>Automatic renewal management before credential expiration dates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Pricing Section
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transparent Pricing</h2>
+                <p class="text-center mx-auto">Simple, percentage-based pricing with no hidden fees</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Small Practice 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Small Practice</h3>
+                            <p>1-3 Providers</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">4-6%</div>
+                            <p>of monthly collections</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Full-service medical billing</li>
+                                <li>Monthly performance reports</li>
+                                <li>Dedicated account manager</li>
+                                <li>EHR integration</li>
+                                <li>24/7 online portal access</li>
+                                <li>Standard support</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Practice 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Medium Practice</h3>
+                            <p>4-10 Providers</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">3-5%</div>
+                            <p>of monthly collections</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Everything in Small Practice</li>
+                                <li>Custom reporting</li>
+                                <li>Priority support</li>
+                                <li>Quarterly business reviews</li>
+                                <li>Staff training sessions</li>
+                                <li>Denial management included</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Large Practice/Group</h3>
+                            <p>10+ Providers</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">2-4%</div>
+                            <p>of monthly collections</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Everything in Medium Practice</li>
+                                <li>Dedicated onsite team</li>
+                                <li>Custom workflow integration</li>
+                                <li>Executive dashboards</li>
+                                <li>24/7 phone support</li>
+                                <li>Contract negotiation support</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Large Practice 
+    </section>-->
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Verify Benefits the Right Way?</h2>
+            <p>Streamline your intake process, reduce claim denials, and give your patients clear financial expectations
+                from day one.</p>
+            <a href="contact.html" class="btn cta-btn">Start Verification Today</a>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Verification of Benefits FAQs</h2>
+                <p class="text-center mx-auto">Answers to common questions about our benefit verification services</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    What information is included in a VOB report?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our VOB reports include eligibility status, plan details, covered services, copays,
+                                    coinsurance, deductibles, out-of-pocket maximums, prior authorization requirements,
+                                    and plan limitations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    How quickly can you verify benefits?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We typically complete VOB within 24 hours. For urgent cases, we offer same-day
+                                    verification. Our team uses a combination of direct payer contact and automated
+                                    tools to ensure speed and accuracy.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Do you verify both medical and behavioral health benefits?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we verify benefits for all types of services including medical, mental health,
+                                    substance use treatment, and specialty care. Our team is trained in payer-specific
+                                    requirements across various disciplines.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    How do you ensure accuracy in benefit details?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We cross-verify benefit details using payer portals, direct calls, and documented
+                                    confirmation from insurance representatives. All VOBs are reviewed by a specialist
+                                    before being delivered to your team.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="index.html">
+                            <img src="./img/logo-4.png" alt="Company Logo" width="230" height="100">
+                        </a>
+                        <p>Streamlining Healthcare Billing so you can focus on what matters most, patient care.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576403553969"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/SHMEDEX"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shmedex/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/105496552"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Medical Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Verification-of-benefits.html">Verification of Benefits</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Accounts Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Digital Marketing</h4>
+                        <ul>
+                            <li><a href="web-dev.html">Website Development</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="graphic-design.html">Graphic Designing</a></li>
+                            <li><a href="social-med.html">Social Media Marketing</a></li>
+                            <li><a href="content-writing.html">Content Writing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="./js/script.js">
+    </script>
+</body>
+
+</html>

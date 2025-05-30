@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta
+      name="description"
+      content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency."
+    />
+    <!-- Favicon setup -->
+    <link
+      rel="icon"
+      href="./favicon/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="./favicon/android-chrome-192x192.png"
+      type="image/png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      href="./favicon/android-chrome-512x512.png"
+      type="image/png"
+      sizes="512x512"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./favicon/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="shortcut icon"
+      href="./favicon/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* Add custom styles for the tabs */
+      .services-hero {
+        background: linear-gradient(
+            rgba(3, 74, 177, 0.8),
+            rgba(3, 74, 177, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .service-tabs {
+        margin: 40px 0;
+      }
+
+      .service-tabs .nav-tabs {
+        border-bottom: none;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      .service-tabs .nav-link {
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #6c757d;
+        background: transparent;
+        border-radius: 0;
+        position: relative;
+        margin: 0 10px;
+      }
+
+      .service-tabs .nav-link.active {
+        color: #0d6efd;
+        background: transparent;
+        border: none;
+      }
+
+      .service-tabs .nav-link.active:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #0d6efd;
+      }
+
+      .service-tabs .nav-link:hover {
+        border: none;
+        color: #0d6efd;
+      }
+
+      .tab-content {
+        padding: 20px 0;
+      }
+
+      .service-category {
+        display: none;
+      }
+
+      .service-category.active {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="d-flex align-items-center">
+                <a class="nav-link" href="services.html">Services</a>
+                <a
+                  class="dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </a>
+              </div>
+              <ul
+                class="dropdown-menu p-3 w-100 w-lg-auto"
+                style="
+                  min-width: 600px;
+                  background-color: var(--bs-dropdown-bg);
+                "
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- Medical Care Column -->
+                  <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                  <!-- Divider -->
+                  <div class="border-start border-top d-lg-none my-3"></div>
+                  <div
+                    class="border-start d-none d-lg-block mx-lg-3"
+                    style="height: auto"
+                  ></div>
+
+                  <!-- Digital Marketing Column -->
+                  <div>
+                    <h6 class="dropdown-header">Digital Marketing</h6>
+                    <a class="dropdown-item" href="web-dev.html"
+                      >Website development</a
+                    >
+                    <a class="dropdown-item" href="ui-ux.html"
+                      >UI / UX Designing</a
+                    >
+                    <a class="dropdown-item" href="seo.html"
+                      >Search Engine
+                      <br class="d-none d-lg-block" />Optimization</a
+                    >
+                    <a class="dropdown-item" href="graphic-design.html"
+                      >Graphic Designing <br class="d-none d-lg-block"
+                    /></a>
+                    <a class="dropdown-item" href="social-med.html"
+                      >Social Media <br class="d-none d-lg-block" />
+                      Marketing</a
+                    >
+                    <a class="dropdown-item" href="content-writing.html"
+                      >Content Writing</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="specialities.html"
+                >Specialities</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item ms-lg-3 my-2 my-lg-0">
+              <a class="btn btn-primary nav-btn" href="contact.html"
+                >Free Consultation</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/19406042114"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+        alt="WhatsApp Chat"
+    /></a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Services Hero Section -->
+
+    <section class="services-hero">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Our Comprehensive Services</h1>
+        <p class="lead">
+          Looking to boost revenue, simplify your workflow, or deliver a better
+          patient experience?<br />
+          Our all-in-one healthcare management solutions are designed to help
+          your practice run smarter, grow faster, and exceed patient
+          expectations every step of the way.
+        </p>
+      </div>
+    </section>
+
+    <!-- Service Tabs Section -->
+    <section class="service-tabs">
+      <div class="container">
+        <ul class="nav nav-tabs" id="serviceTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="healthcare-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#healthcare"
+              type="button"
+              role="tab"
+              aria-controls="healthcare"
+              aria-selected="true"
+            >
+              <i class="fas fa-heartbeat me-2"></i> Healthcare Services
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="digital-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#digital"
+              type="button"
+              role="tab"
+              aria-controls="digital"
+              aria-selected="false"
+            >
+              <i class="fas fa-bullhorn me-2"></i> Digital Marketing
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="serviceTabsContent">
+          <!-- Healthcare Services Tab -->
+          <div
+            class="tab-pane fade show active"
+            id="healthcare"
+            role="tabpanel"
+            aria-labelledby="healthcare-tab"
+          >
+            <div class="row g-4">
+              <!-- Medical Billing -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                  </div>
+                  <h3 class="service-title">Medical Billing</h3>
+                  <p class="mb-4">
+                    Streamline your revenue cycle with our comprehensive medical
+                    billing services.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Claims submission
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Payment posting
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Insurance follow-up
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Patient billing
+                    </li>
+                  </ul>
+                  <a
+                    href="medical-billing.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Medical Credentialing -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-user-md"></i>
+                  </div>
+                  <h3 class="service-title">Medical Credentialing</h3>
+                  <p class="mb-4">
+                    Ensure your providers are properly credentialed with
+                    insurance networks.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Provider enrollment
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> CAQH
+                      maintenance
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Revalidation services
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Contract negotiation
+                    </li>
+                  </ul>
+                  <a
+                    href="Medical-credentialing.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Medical Coding -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <h3 class="service-title">Medical Coding</h3>
+                  <p class="mb-4">
+                    Accurate coding for optimal reimbursement and compliance.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      ICD-10 coding
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> CPT
+                      coding
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      HCPCS coding
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Chart audits
+                    </li>
+                  </ul>
+                  <a
+                    href="Medical-coding.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Verification Of Benefits -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-user-check"></i>
+                  </div>
+                  <h3 class="service-title">Verification Of Benefits</h3>
+                  <p class="mb-4">
+                    Verify insurance coverage before services are rendered.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Real-time verification
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Benefits investigation
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Authorization tracking
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Copay/deductible analysis
+                    </li>
+                  </ul>
+                  <a
+                    href="Patient-elig-verify.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Denial Management -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                  </div>
+                  <h3 class="service-title">Denial Management</h3>
+                  <p class="mb-4">
+                    Maximize revenue by reducing claim denials.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Denial analysis
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Appeal preparation
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Trend reporting
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Process improvement
+                    </li>
+                  </ul>
+                  <a
+                    href="Denial-management.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Account Receivable Services -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-calculator"></i>
+                  </div>
+                  <h3 class="service-title">Accounts Receivable Services</h3>
+                  <p class="mb-4">
+                    Optimize your accounts receivable performance.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Aging analysis
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Collections management
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Payment reconciliation
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Performance reporting
+                    </li>
+                  </ul>
+                  <a
+                    href="Acc-rec-services.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <!--Virtual Medical Staff-->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fa-solid fa-headset"></i>
+                  </div>
+                  <h3 class="service-title">Virtual Staff</h3>
+                  <p class="mb-4">
+                    Enhance operational efficiency with world class virtual
+                    staff
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Trained support for front desk
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Insurance verification and intake
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Appointment scheduling and reminders
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      HIPAA-compliant administrative help
+                    </li>
+                  </ul>
+                  <a
+                    href="Virtual-medical-staff.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digital Marketing Tab -->
+          <div
+            class="tab-pane fade"
+            id="digital"
+            role="tabpanel"
+            aria-labelledby="digital-tab"
+          >
+            <div class="row g-4">
+              <!-- Website Development -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                  <h3 class="service-title">Website Development</h3>
+                  <p class="mb-4">
+                    Custom websites designed for performance and user
+                    experience.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Responsive design
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> CMS
+                      integration
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      E-commerce solutions
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Custom functionality
+                    </li>
+                  </ul>
+                  <a href="web-dev.html" class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- UI/UX Design -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-paint-brush"></i>
+                  </div>
+                  <h3 class="service-title">UI/UX Design</h3>
+                  <p class="mb-4">
+                    Beautiful interfaces with intuitive user experiences.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Wireframing
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Prototyping
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> User
+                      testing
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Brand alignment
+                    </li>
+                  </ul>
+                  <a href="ui-ux.html" class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- SEO -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <h3 class="service-title">Search Engine Optimization</h3>
+                  <p class="mb-4">
+                    Improve your visibility in search engine results.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Keyword research
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      On-page optimization
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Technical SEO
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Performance tracking
+                    </li>
+                  </ul>
+                  <a href="seo.html" class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Graphic designing -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <h3 class="service-title">Grpahic Designing</h3>
+                  <p class="mb-4">
+                    Graphic design uses visuals like text, images, and color to
+                    effectively communicate ideas and strengthen brand identity
+                    across various media.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> Logo
+                      Design
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Branding & Visual Identity
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Social Media Graphics
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Marketing Materials
+                    </li>
+                  </ul>
+                  <a
+                    href="graphic-design.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Social Media Marketing -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-share-alt"></i>
+                  </div>
+                  <h3 class="service-title">Social Media Marketing</h3>
+                  <p class="mb-4">
+                    Engage your audience across social platforms.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Content strategy
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Community management
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> Paid
+                      advertising
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Performance analytics
+                    </li>
+                  </ul>
+                  <a href="social-med.html" class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+
+              <!-- Content Writing -->
+              <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card p-4">
+                  <div class="service-detail-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                  </div>
+                  <h3 class="service-title">Content Writing</h3>
+                  <p class="mb-4">
+                    Compelling content that resonates with your audience.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> Blog
+                      writing
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Website copy
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-primary me-2"></i> SEO
+                      content
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle text-primary me-2"></i>
+                      Brand messaging
+                    </li>
+                  </ul>
+                  <a
+                    href="content-writing.html"
+                    class="btn btn-outline-primary mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process py-5 bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Working Process</h2>
+          <p class="text-center mx-auto">
+            A structured approach to delivering exceptional results
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <!-- Step 1 -->
+            <div class="process-step">
+              <div class="process-step-number">1</div>
+              <div class="process-step-content">
+                <h3>Initial Consultation</h3>
+                <p>
+                  We start by learning about your practice your goals,
+                  challenges, and current operations. This helps us tailor our
+                  solutions to fit your exact needs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+              <div class="process-step-number">2</div>
+              <div class="process-step-content">
+                <h3>Setup & Access</h3>
+                <p>
+                  Next, we gather necessary access, tools, and information to
+                  get started. Whether it’s software credentials, practice
+                  details, or provider data, we ensure everything is in place
+                  for a smooth launch.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+              <div class="process-step-number">3</div>
+              <div class="process-step-content">
+                <h3>Service Implementation</h3>
+                <p>
+                  We begin delivering services whether that’s billing,
+                  credentialing, support, or systems setup—with a focus on
+                  accuracy, speed, and transparency from day one.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="process-step">
+              <div class="process-step-number">4</div>
+              <div class="process-step-content">
+                <h3>Ongoing Support & Optimization</h3>
+                <p>
+                  We don’t just get things running—we keep them running
+                  efficiently. You’ll receive regular updates, performance
+                  reports, and responsive support as we help your practice grow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p class="text-center mx-auto">
+            Find answers to common questions about our services
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div
+                class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq1"
+                  >
+                    Are your services HIPAA-compliant?
+                  </button>
+                </h3>
+                <div
+                  id="faq1"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes. We follow strict HIPAA guidelines and implement secure
+                    systems to protect patient data. Our team is trained in
+                    privacy, security, and compliance best practices.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div
+                class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq2"
+                  >
+                    Can you help recover outstanding/aged claims?
+                  </button>
+                </h3>
+                <div
+                  id="faq2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, we specialize in aged A/R recovery. We evaluate, follow
+                    up, and resubmit old claims to recover lost revenue, even
+                    for cases involving multiple insurance payers.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div
+                class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq3"
+                  >
+                    How long does it take to get started?
+                  </button>
+                </h3>
+                <div
+                  id="faq3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We can begin onboarding within a few days of receiving the
+                    necessary documents and access. A full transition depends on
+                    the scope of work.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div
+                class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq4"
+                  >
+                    How do I know if outsourcing billing is right for me?
+                  </button>
+                </h3>
+                <div
+                  id="faq4"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    If you're spending more time on paperwork than patient
+                    care or struggling with denials and inconsistent cash
+                    flow outsourcing your billing can save time, reduce errors,
+                    and improve collections.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Work With Us?</h2>
+        <p>
+          Whether you're looking to start a new project or just want to learn
+          more about our services, we'd love to hear from you.
+        </p>
+        <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Logo and About-->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-about">
+              <a class="footer-logo" href="index.html">
+                <img
+                  src="./img/logo-4.png"
+                  alt="Company Logo"
+                  width="230"
+                  height="100"
+                />
+              </a>
+              <p>
+                We provide innovative digital solutions to help businesses grow
+                and succeed in the modern world.
+              </p>
+              <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61576403553969"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://x.com/SHMEDEX"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/shmedex/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="https://www.linkedin.com/company/105496552"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+
+           <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="specialities.html">Specialties</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Medical Services -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Medical Services</h4>
+              <ul>
+                <li><a href="medical-billing.html">Medical Billing</a></li>
+                <li>
+                  <a href="Medical-credentialing.html">Medical Credentialing</a>
+                </li>
+                <li><a href="Medical-coding.html">Medical Coding</a></li>
+                <li>
+                  <a href="Verification-of-benefits.html"
+                    >Verification of Benefits</a
+                  >
+                </li>
+                <li><a href="Denial-management.html">Denial Management</a></li>
+                <li>
+                  <a href="Acc-rec-services.html"
+                    >Accounts Receivable Services</a
+                  >
+                </li>
+                <li>
+                  <a href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h4>Digital Marketing</h4>
+              <ul>
+                <li><a href="web-dev.html">Website Development</a></li>
+                <li><a href="ui-ux.html">UI/UX Design</a></li>
+                <li><a href="seo.html">SEO Services</a></li>
+                <li><a href="social-med.html">Social Media Marketing</a></li>
+                <li><a href="content-writing.html">Content Writing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Initialize Bootstrap tabs
+      const tabElms = document.querySelectorAll('button[data-bs-toggle="tab"]');
+      tabElms.forEach((tabElm) => {
+        tabElm.addEventListener("shown.bs.tab", function (event) {
+          // You can add additional logic here if needed when a tab is shown
+        });
+      });
+    </script>
+  </body>
+</html>

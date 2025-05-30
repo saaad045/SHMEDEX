@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX - Virtual Medical Staff</title>
+    <meta name="description" content="SHMEDEX provides expert virtual medical staff to streamline your practice operations. Our remote professionals handle billing, coding, and administrative tasks efficiently." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .service-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .btn-hero {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.7s;
+            opacity: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-hero:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+            background: white;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .service-hero {
+                padding: 100px 0 60px;
+            }
+
+            .process-step {
+                padding-left: 70px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-hero {
+                padding: 80px 0 40px;
+            }
+
+            .process-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Same as your template) -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+             <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                         <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="web-dev.html">Website development</a>
+                                    <a class="dropdown-item" href="ui-ux.html">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="seo.html">Search Engine <br
+                                            class="d-none d-lg-block">Optimization</a>
+                                            <a class="dropdown-item" href="graphic-design.html">Graphic Designing <br
+                                            class="d-none d-lg-block"></a>
+                                    <a class="dropdown-item" href="social-med.html">Social Media <br
+                                            class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-writing.html">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Virtual Medical Staff</h1>
+            <p class="lead">Expert remote professionals to handle your medical billing, coding, and administrative tasks with precision</p>
+            <a href="contact.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                Scale Your Team Today<i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/19406042114" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"></a>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Service Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Your Extended Medical Team</h2>
+                    <p>Our virtual medical staff provides skilled professionals to handle your back-office operations remotely, reducing overhead costs while maintaining high-quality service.</p>
+                    <p>We carefully match you with US-based specialists who integrate seamlessly with your practice's workflows and systems.</p>
+                    <ul class="feature-list mt-4">
+                        <li>50-70% Cost Savings vs In-House Staff</li>
+                        <li>24-48 Hour Onboarding</li>
+                        <li>HIPAA-Compliant Operations</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>No Recruitment or Training Costs</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./img/virtual-medical-1.webp" alt="Virtual Medical Staff Overview"
+                        class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Virtual Staff</h2>
+                <p class="text-center mx-auto">We provide the expertise you need without the overhead</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Cost Efficiency</h3>
+                        <p>Save on salaries, benefits, office space, and equipment with our flexible staffing solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Extended Coverage</h3>
+                        <p>Get after-hours and weekend support to keep your practice running smoothly around the clock.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>HIPAA Compliance</h3>
+                        <p>Secure, encrypted systems and trained professionals ensure complete patient data protection.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Quick Scaling</h3>
+                        <p>Easily adjust staffing levels up or down based on your practice's changing needs.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Performance Tracking</h3>
+                        <p>Real-time productivity metrics and quality assurance monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Dedicated Support</h3>
+                        <p>Your virtual team works exclusively for your practice with direct supervision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Roles Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Available Virtual Staff Roles</h2>
+                <p class="text-center mx-auto">Specialized professionals for every practice need</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Medical Billers</h3>
+                        <p>Expert claim submission, payment posting, and AR follow-up to maximize your reimbursements.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3>Medical Coders</h3>
+                        <p>Certified professionals ensuring accurate ICD-10, CPT, and HCPCS coding compliance.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <h3>Virtual Assistants</h3>
+                        <p>Handle scheduling, patient communication, and administrative tasks efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Patient Support</h3>
+                        <p>Dedicated staff for appointment scheduling, insurance verification, and patient follow-ups.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3>Prior Authorization Specialists</h3>
+                        <p>Streamline approvals for procedures, medications, and diagnostic tests.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Entry Specialists</h3>
+                        <p>Accurate and efficient patient data management and EHR maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Staffing Process</h2>
+                <p class="text-center mx-auto">Simple steps to build your virtual team</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Needs Assessment</h3>
+                            <p>We analyze your practice's specific requirements and workflow challenges.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Staff Matching</h3>
+                            <p>We select professionals with the right skills and experience for your specialty.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>System Integration</h3>
+                            <p>Secure setup with your EHR/PM system following HIPAA protocols.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Training & Onboarding</h3>
+                            <p>Your virtual staff learns your specific workflows and preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>Performance Monitoring</h3>
+                            <p>Regular quality checks and productivity reporting ensure optimal results.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>Ongoing Support</h3>
+                            <p>Dedicated account manager for continuous optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Build Your Virtual Team?</h2>
+            <p>Get started with qualified professionals in as little as 48 hours.</p>
+            <a href="contact.html" class="btn cta-btn">Request Staff Today</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Virtual Staff FAQs</h2>
+                <p class="text-center mx-auto">Answers to common questions about our virtual staffing</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    How quickly can I get staff onboarded?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Most virtual staff can be onboarded within 24-48 hours after we understand your requirements. Complex EHR integrations may take 3-5 business days.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    What systems can your staff work with?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our team is trained on all major EHR/PM systems including Epic, Cerner, NextGen, Athenahealth, eClinicalWorks, and more. We can also work with custom systems.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    How do you ensure quality control?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Each staff member undergoes rigorous screening and training. We provide daily productivity reports, weekly quality audits, and a dedicated account manager to monitor performance.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    What are your security protocols?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We use HIPAA-compliant secure connections, encrypted data transfer, two-factor authentication, and secure facilities. All staff complete annual HIPAA training and sign strict confidentiality agreements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="index.html">
+                            <img src="./img/logo-4.png" alt="Company Logo" width="230" height="100">
+                        </a>
+                        <p>Streamlining Healthcare Billing so you can focus on what matters most, patient care.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576403553969"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/SHMEDEX"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shmedex/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/105496552"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Medical Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Verification-of-benefits.html">Verification of Benefits</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Accounts Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Digital Marketing</h4>
+                        <ul>
+                            <li><a href="web-dev.html">Website Development</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="graphic-design.html">Graphic Designing</a></li>
+                            <li><a href="social-med.html">Social Media Marketing</a></li>
+                            <li><a href="content-writing.html">Content Writing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

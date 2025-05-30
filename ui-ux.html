@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHMEDEX</title>
+    <meta name="description" content="SHMEDEX is a leading healthcare management company specializing in medical billing, credentialing, and digital marketing services. We streamline healthcare operations to enhance patient care and practice efficiency." />
+    <!-- Favicon setup -->
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="./favicon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .service-hero {
+            background: linear-gradient(rgba(3, 74, 177, 0.8), rgba(3, 74, 177, 0.9)), url('https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .btn-hero {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.7s;
+            opacity: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-hero:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--secondary-color);
+            background: white;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+       /* .pricing-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(3, 74, 177, 0.15);
+        }
+
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-body {
+            padding: 30px;
+            background: white;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+        } */
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .service-hero {
+                padding: 100px 0 60px;
+            }
+
+            .process-step {
+                padding-left: 70px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-hero {
+                padding: 80px 0 40px;
+            }
+
+            .process-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+             <a class="navbar-brand" href="index.html">
+                <img src="./img/logo-2.png" alt="SHMEDEX" width="180" height="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="d-flex align-items-center">
+                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </a>
+                        </div>
+                         <ul class="dropdown-menu p-3 w-100 w-lg-auto"
+                            style="min-width: 600px; background-color: var(--bs-dropdown-bg);"
+                            aria-labelledby="servicesDropdown">
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Medical Care Column -->
+                                <div class="me-lg-4 mb-3 mb-lg-0">
+                                    <h6 class="dropdown-header">Medical Care</h6>
+                                    <a class="dropdown-item" href="medical-billing.html">Medical Billing</a>
+                                    <a class="dropdown-item" href="Medical-credentialing.html">Medical Credentialing</a>
+                                    <a class="dropdown-item" href="Medical-coding.html">Medical Coding</a>
+                                    <a class="dropdown-item" href="Verification-of-benefits.html">Verification Of
+                                        Benefits</a>
+                                    <a class="dropdown-item" href="Denial-management.html">Denial Management</a>
+                                    <a class="dropdown-item" href="Acc-rec-services.html">Accounts Receivable
+                                        Services</a>
+                                    <a class="dropdown-item" href="Virtual-medical-staff.html">Virtual Medical Staff</a>
+                                    
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="border-start border-top d-lg-none my-3"></div>
+                                <div class="border-start d-none d-lg-block mx-lg-3" style="height: auto;"></div>
+
+                                <!-- Digital Marketing Column -->
+                                <div>
+                                    <h6 class="dropdown-header">Digital Marketing</h6>
+                                    <a class="dropdown-item" href="web-dev.html">Website development</a>
+                                    <a class="dropdown-item" href="ui-ux.html">UI / UX Designing</a>
+                                    <a class="dropdown-item" href="seo.html">Search Engine <br
+                                            class="d-none d-lg-block">Optimization</a>
+                                            <a class="dropdown-item" href="graphic-design.html">Graphic Designing <br
+                                            class="d-none d-lg-block"></a>
+                                    <a class="dropdown-item" href="social-med.html">Social Media <br
+                                            class="d-none d-lg-block">
+                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-writing.html">Content Writing</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="specialities.html">Specialities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-primary nav-btn" href="contact.html">Free Consultation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">UI/UX Design Services</h1>
+            <p class="lead">Crafting intuitive digital experiences that delight users and drive business results</p>
+            <a href="contact.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">
+                Start Your Project <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/19406042114" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"></a>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Service Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Human-Centered Digital Experiences</h2>
+                    <p>Our UI/UX design services combine aesthetic excellence with functional precision to create interfaces that users love. We don't just make things look good - we design experiences that are intuitive, accessible, and effective at achieving business goals.</p>
+                    <p>From mobile apps to complex web applications, our design process focuses on understanding user needs, testing assumptions, and delivering pixel-perfect interfaces that drive engagement and conversion.</p>
+                    <ul class="feature-list mt-4">
+                        <li>User Research & Persona Development</li>
+                        <li>Information Architecture & Wireframing</li>
+                        <li>Interactive Prototyping</li>
+                        <li>Usability Testing & Iteration</li>
+                        <li>Design System Creation</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="UI/UX Design Process" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Back-to-top-->
+    <button id="backToTopBtn" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Benefits Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Invest in Professional UI/UX Design</h2>
+                <p class="text-center mx-auto">Great design isn't just about looks - it's about results</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>Enhanced Usability</h3>
+                        <p>Intuitive interfaces reduce friction, helping users accomplish their goals with minimal effort and frustration.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Improved Conversions</h3>
+                        <p>Strategic design can increase conversion rates by 200% or more by removing barriers and guiding users.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Consistent Experiences</h3>
+                        <p>Design systems ensure visual and functional consistency across all platforms and devices.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Reduced Development Costs</h3>
+                        <p>Proper UX planning identifies issues early, preventing expensive redesigns during development.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Increased Customer Loyalty</h3>
+                        <p>Delightful experiences create emotional connections that keep users coming back.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Competitive Advantage</h3>
+                        <p>Superior UX is a key differentiator in crowded markets where features are often similar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our UI/UX Design Process</h2>
+                <p class="text-center mx-auto">A research-driven approach that delivers exceptional results</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Discovery & Research</h3>
+                            <p>We conduct user interviews, competitive analysis, and business goal alignment to establish design foundations.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>User Personas & Journeys</h3>
+                            <p>Creating detailed user profiles and mapping their interactions with your product to identify pain points and opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Information Architecture</h3>
+                            <p>Structuring content and functionality in a logical, intuitive hierarchy that matches user mental models.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Wireframing & Prototyping</h3>
+                            <p>Developing low-fidelity wireframes and interactive prototypes to test concepts before visual design.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>UI Design & Branding</h3>
+                            <p>Applying visual design principles, brand elements, and micro-interactions to create polished interfaces.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>Usability Testing</h3>
+                            <p>Conducting tests with real users to validate designs and identify areas for improvement.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">7</div>
+                        <div class="process-content">
+                            <h3>Handoff & Design System</h3>
+                            <p>Delivering developer-ready assets and comprehensive design systems for consistent implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section 
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transparent Pricing</h2>
+                <p class="text-center mx-auto">Flexible options tailored to your needs</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Basic UI Package 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basic UI Package</h3>
+                            <p>For Startups & MVPs</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$2,499+</div>
+                            <p>one-time fee</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Up to 5 Key Screens</li>
+                                <li>Basic User Flows</li>
+                                <li>Mobile or Web Focus</li>
+                                <li>Style Guide</li>
+                                <li>2 Rounds of Revisions</li>
+                                <li>1 Week Delivery</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comprehensive UX Package 
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Comprehensive UX</h3>
+                            <p>For Growing Businesses</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$6,999+</div>
+                            <p>one-time fee</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>Full UX Research</li>
+                                <li>User Personas & Journeys</li>
+                                <li>Complete App/Website Design</li>
+                                <li>Interactive Prototypes</li>
+                                <li>Usability Testing</li>
+                                <li>Basic Design System</li>
+                                <li>3 Weeks Delivery</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Enterprise Design</h3>
+                            <p>For Complex Products</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price mb-3">$15,000+</div>
+                            <p>one-time fee</p>
+                            <hr>
+                            <ul class="pricing-features">
+                                <li>In-Depth User Research</li>
+                                <li>Multi-Platform Design</li>
+                                <li>Advanced Prototyping</li>
+                                <li>Comprehensive Design System</li>
+                                <li>Ongoing Usability Testing</li>
+                                <li>Developer Collaboration</li>
+                                <li>6+ Weeks Delivery</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100 mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Enterprise Design 
+    </section>-->
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your User Experience?</h2>
+            <p>Whether you're looking to start a new project or improve an existing product, we'd love to hear from you.</p>
+            <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>UI/UX Design FAQs</h2>
+                <p class="text-center mx-auto">Answers to common questions about our services</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    What's the difference between UI and UX design?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    UI (User Interface) design focuses on the visual elements - colors, typography, buttons, etc. UX (User Experience) design focuses on the overall feel and functionality of the product. We provide both services to ensure your product is not only beautiful but also intuitive and effective.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    How do you measure the success of a UX design?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We measure success through both qualitative and quantitative metrics including task completion rates, time-on-task, error rates, user satisfaction scores (SUS), conversion rates, and retention metrics. We establish baseline measurements before redesign and track improvements post-implementation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Do you work with existing products or just new ones?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We frequently work with both. For existing products, we conduct UX audits to identify pain points and opportunities for improvement. For new products, we help shape the experience from the ground up. About 60% of our projects involve redesigning existing interfaces.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    What tools do you use for UI/UX design?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our toolkit includes Figma (primary design tool), Adobe Creative Suite, Sketch, InVision for prototyping, Miro for collaboration, Hotjar for analytics, and various usability testing platforms. We choose tools based on project requirements and are always evaluating new technologies.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and About -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a class="footer-logo" href="index.html">
+                            <img src="./img/logo-4.png" alt="Company Logo" width="230" height="100">
+                        </a>
+                        <p>Streamlining Healthcare Billing so you can focus on what matters most, patient care.</p>
+                        <div class="social-icons mt-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576403553969"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/SHMEDEX"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/shmedex/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/105496552"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us here -->
+                    <div class="footer-contact mt-4">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Chicago, United States
+                        </p>
+                        <p><i class="fas fa-phone"></i> (312) 554-5542</p>
+                        <p><i class="fas fa-envelope"></i> info@shmedex.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="specialities.html">Specialties</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Services -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Medical Services</h4>
+                        <ul>
+                            <li><a href="medical-billing.html">Medical Billing</a></li>
+                            <li><a href="Medical-credentialing.html">Medical Credentialing</a></li>
+                            <li><a href="Medical-coding.html">Medical Coding</a></li>
+                            <li><a href="Verification-of-benefits.html">Verification of Benefits</a></li>
+                            <li><a href="Denial-management.html">Denial Management</a></li>
+                            <li><a href="Acc-rec-services.html">Accounts Receivable Services</a></li>
+                            <li><a href="Virtual-medical-staff.html">Virtual Medical Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Digital Marketing</h4>
+                        <ul>
+                            <li><a href="web-dev.html">Website Development</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="graphic-design.html">Graphic Designing</a></li>
+                            <li><a href="social-med.html">Social Media Marketing</a></li>
+                            <li><a href="content-writing.html">Content Writing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 SHMEDEX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
