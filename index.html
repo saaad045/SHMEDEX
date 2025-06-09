@@ -43,103 +43,7 @@
             color: #034AB1;
         }
 
-        .contact-overlay-banner {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px 0;
-            z-index: 3;
-            /* Subtle blur effect 
-            backdrop-filter: blur(3px);*/
-
-        }
-
-        .contact-form-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            /* light frosted-glass effect */
-            backdrop-filter: blur(3px);
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            /* light border */
-            opacity: 1;
-        }
-
-
-
-        .form-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .form-group {
-            flex: 1;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            /* slightly more visible border */
-            background: rgba(109, 108, 108, 0.07);
-            /* light translucent background */
-            color: white;
-            border-radius: 3px;
-            font-size: 14px;
-            backdrop-filter: blur(1px);
-            /* optional for glassy look */
-            transition: all 0.2s ease;
-        }
-
-
-        .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-            /* Semi-transparent placeholder */
-            font-weight: 300;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-            /* Slightly more visible when focused */
-        }
-
-        .btn-submit {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
-        }
-
-        .btn-submit:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .form-group,
-            .btn-submit {
-                width: 100%;
-            }
-
-            .contact-overlay-banner {
-                padding: 10px 0;
-            }
-        }
+        
     </style>
 </head>
 
@@ -256,7 +160,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+   <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
             alt="Hero Image" class="hero-img img-fluid" />
         <div class="hero-content">
             <h1 class="hero-title">Spearhead Medical Expertise</h1>
@@ -267,26 +171,18 @@
             <a href="#stats" class="btn btn-hero" id="scrollBtn">Free Audit services</a>
         </div>
 
-        <!-- Contact Form Overlay Banner -->
-        <div class="contact-overlay-banner">
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number">
-                        </div>
-                        <button type="submit" class="btn-submit">Contact Us</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+  <!-- Contact Form Overlay -->
+  <div class="contact-form-wrapper">
+    <h2>Claim Free Medical Audit</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone" required>
+      <input type="email" placeholder="Email" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
 
 
     <!-- Stats Section -->
